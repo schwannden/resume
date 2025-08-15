@@ -64,7 +64,7 @@ export function AccessibilityConfig() {
       </Button>
 
       {open && (
-        <div className="absolute right-0 top-full mt-2 w-64 bg-white dark:bg-popover border border-border rounded-lg shadow-lg z-[100] p-4">
+        <div className="absolute right-0 top-full mt-2 w-64 bg-[hsl(var(--popover))] text-[hsl(var(--popover-foreground))] border border-border rounded-lg shadow-lg z-[100] p-4">
           {/* Theme Settings */}
           <div className="space-y-2 mb-4">
             <h3 className="text-sm font-medium text-popover-foreground mb-2">

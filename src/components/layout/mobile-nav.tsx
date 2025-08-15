@@ -55,11 +55,13 @@ export function MobileNav() {
             <SheetClose asChild key={link.href}>
               <Link
                 href={link.href}
-                className="flex flex-col gap-1 p-3 rounded-lg border hover:bg-gray-50 transition-colors text-left"
+                className="flex flex-col gap-1 p-3 rounded-lg border border-border hover:bg-accent hover:text-accent-foreground transition-colors text-left"
                 onClick={() => setOpen(false)}
               >
-                <span className="font-medium text-gray-900">{link.label}</span>
-                <span className="text-sm text-gray-600">
+                <span className="font-medium text-foreground">
+                  {link.label}
+                </span>
+                <span className="text-sm text-muted-foreground">
                   {link.description}
                 </span>
               </Link>
@@ -68,14 +70,14 @@ export function MobileNav() {
         </div>
         <div className="mt-8 pt-6 border-t">
           <div className="flex flex-col gap-2 text-center">
-            <p className="text-sm text-gray-600">Schwannden Kuo</p>
-            <p className="text-xs text-gray-500">
+            <p className="text-sm text-muted-foreground">Schwannden Kuo</p>
+            <p className="text-xs text-muted-foreground">
               Software and System Architect
             </p>
             <div className="flex justify-center gap-4 mt-2">
               <a
                 href="mailto:schwannden@gmail.com"
-                className="text-xs text-blue-600 hover:text-blue-800"
+                className="text-xs text-primary hover:underline"
               >
                 Email
               </a>
@@ -83,7 +85,7 @@ export function MobileNav() {
                 href="https://www.linkedin.com/in/schwannden/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs text-blue-600 hover:text-blue-800"
+                className="text-xs text-primary hover:underline"
               >
                 LinkedIn
               </a>
@@ -91,7 +93,7 @@ export function MobileNav() {
                 href="https://github.com/schwannden"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs text-blue-600 hover:text-blue-800"
+                className="text-xs text-primary hover:underline"
               >
                 GitHub
               </a>
