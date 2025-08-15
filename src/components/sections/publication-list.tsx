@@ -76,11 +76,21 @@ export function PublicationList({ mode = "highlight" }: PublicationListProps) {
 
   return (
     <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-6">
-      <h3 className="text-2xl font-semibold text-gray-900 mb-6">
-        {mode === "highlight"
-          ? "Publications & Writings"
-          : "Complete Publications & Writings"}
-      </h3>
+      <div className="flex items-center justify-between mb-6">
+        <h3 className="text-2xl font-semibold text-gray-900">
+          {mode === "highlight"
+            ? "Publications & Writings"
+            : "Selected Publications & Writings"}
+        </h3>
+        {mode === "highlight" && (
+          <a
+            href="/speaking"
+            className="text-blue-600 hover:text-blue-800 text-sm font-medium"
+          >
+            View all publications →
+          </a>
+        )}
+      </div>
 
       <div className="space-y-8">
         {typesToShow.map((type) => {

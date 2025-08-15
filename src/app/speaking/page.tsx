@@ -73,9 +73,15 @@ export default function SpeakingPage() {
             <div className="mt-6 text-center">
               <Link
                 href="/"
-                className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors inline-block"
+                className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors inline-block mr-4"
               >
                 ← Back to Resume
+              </Link>
+              <Link
+                href="/contributions"
+                className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors inline-block"
+              >
+                View Contributions
               </Link>
             </div>
           </div>
@@ -91,89 +97,11 @@ export default function SpeakingPage() {
           <PublicationList mode="full" />
         </section>
 
-        {/* Open Source Contributions */}
+        {/* English Proficiency */}
         <section className="mb-12">
           <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-6">
             <h3 className="text-2xl font-semibold text-gray-900 mb-6">
-              Open Source Contributions & Projects
-            </h3>
-            <div className="space-y-6">
-              {resumeData.contributions.map((contribution, index) => {
-                const borderColors = [
-                  "border-blue-500",
-                  "border-green-500",
-                  "border-purple-500",
-                  "border-orange-500",
-                  "border-red-500",
-                  "border-indigo-500",
-                ]
-
-                return (
-                  <div
-                    key={index}
-                    className={`border-l-4 ${borderColors[index % borderColors.length]} pl-6`}
-                  >
-                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
-                      <h4 className="text-lg font-medium text-gray-900 flex-1">
-                        {contribution.name}
-                      </h4>
-                      <div className="flex items-center gap-2">
-                        <Badge
-                          variant={
-                            contribution.type === "tool"
-                              ? "success"
-                              : contribution.type === "community"
-                                ? "info"
-                                : "secondary"
-                          }
-                        >
-                          {contribution.type}
-                        </Badge>
-                        <a
-                          href={contribution.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-blue-600 hover:text-blue-800 text-sm"
-                        >
-                          <ExternalLink className="w-4 h-4" />
-                        </a>
-                      </div>
-                    </div>
-
-                    {contribution.description && (
-                      <p className="text-gray-700 mb-3">
-                        {contribution.description}
-                      </p>
-                    )}
-
-                    {contribution.features &&
-                      contribution.features.length > 0 && (
-                        <div className="space-y-1">
-                          {contribution.features.map(
-                            (feature, featureIndex) => (
-                              <div
-                                key={featureIndex}
-                                className="flex items-start gap-2 text-gray-600 text-sm"
-                              >
-                                <GitBranch className="w-3 h-3 mt-0.5 flex-shrink-0" />
-                                <span>{feature}</span>
-                              </div>
-                            )
-                          )}
-                        </div>
-                      )}
-                  </div>
-                )
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* Awards & Recognition */}
-        <section className="mb-12">
-          <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-6">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-6">
-              Awards & Recognition
+              English Proficiency
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {resumeData.awards.map((award, index) => {

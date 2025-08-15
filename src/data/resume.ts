@@ -102,9 +102,18 @@ export const resumeData: ResumeData = {
 
   experience: [
     {
+      title: "Cloud Software Engineer",
+      company: "Ubiquiti",
+      duration: "Aug 2024 - Present",
+      responsibilities: [
+        "Implement and operate Single Sign On servie with millions of users and 1000~10000 rps workload",
+        "Design and implement the best security, authentication, authorization practices to drive company product growth.",
+      ],
+    },
+    {
       title: "Senior Software Engineer",
       company: "Dell",
-      duration: "Jan 2023 - Present",
+      duration: "Jan 2023 - Ayg 2024",
       responsibilities: [
         "Transformed a legacy integration test platform to modernized cloud native architecture, saves 50% operation cost, and shift left testing to increase lead time. Accelerate complex product build time by 400%, modernized build infrastructure.",
         "Cultivate a culture of documentation through CI/CD tools.",
@@ -169,15 +178,25 @@ export const resumeData: ResumeData = {
         "ArgoCD",
         "Helm",
         "Kustomize",
-        "Rancher",
         "MinIO",
-        "Longhorn",
+        "Github Actions",
       ],
       variant: "info",
     },
     {
-      category: "Programming Languages",
-      skills: ["Python", "Scala", "TypeScript", "JavaScript"],
+      category: "Languages & Frameworks",
+      skills: [
+        "Python",
+        "Scala",
+        "TypeScript",
+        "JavaScript",
+        "React",
+        "Next.js",
+        "Tailwind",
+        "Shadcn UI",
+        "Django",
+        "FastAPI",
+      ],
       variant: "success",
     },
     {
@@ -187,22 +206,12 @@ export const resumeData: ResumeData = {
         "Akka",
         "AutoML",
         "Time Series",
-        "Big Query",
         "Airflow",
+        "Prefect",
+        "Click",
+        "Grafana",
       ],
       variant: "warning",
-    },
-    {
-      category: "CI/CD & Tools",
-      skills: [
-        "GitHub Actions",
-        "Prefect",
-        "SBOM",
-        "Trivy",
-        "OSS Scanner",
-        "Git",
-      ],
-      variant: "secondary",
     },
   ],
 
@@ -444,7 +453,7 @@ export const resumeData: ResumeData = {
     },
     {
       name: "Chabod Church Management System",
-      type: "github",
+      type: "community",
       url: "https://github.com/schwannden/chabod",
       description: "Multi-tenant open source church management system",
     },

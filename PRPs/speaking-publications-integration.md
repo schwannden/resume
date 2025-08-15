@@ -324,7 +324,7 @@ export default function SpeakingPage() {
           {/* Enhanced contribution showcase */}
         </section>
 
-        {/* Awards & Recognition */}
+        {/* English Proficiency */}
         <section>{/* Speaking awards and recognition */}</section>
       </div>
     </main>

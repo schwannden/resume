@@ -1,7 +1,7 @@
 import { resumeData, externalLinks } from "@/data/resume"
 import { Badge } from "@/components/ui/badge"
 import { SpeakingHighlights } from "@/components/sections/speaking-highlights"
-import { PublicationList } from "@/components/sections/publication-list"
+import { ContributionList } from "@/components/sections/contribution-list"
 
 export default function HomePage() {
   return (
@@ -29,31 +29,6 @@ export default function HomePage() {
             <p className="text-gray-700 leading-relaxed">
               {resumeData.summary}
             </p>
-          </div>
-        </section>
-
-        {/* Skills Section */}
-        <section className="mb-12">
-          <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-6">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-              Technical Skills
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {resumeData.skills.map((skillCategory, index) => (
-                <div key={index}>
-                  <h4 className="font-medium text-gray-900 mb-2">
-                    {skillCategory.category}
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {skillCategory.skills.map((skill, skillIndex) => (
-                      <Badge key={skillIndex} variant={skillCategory.variant}>
-                        {skill}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 
@@ -99,6 +74,31 @@ export default function HomePage() {
         {/* Speaking Highlights Section */}
         <section className="mb-12">
           <SpeakingHighlights mode="highlight" />
+        </section>
+
+        {/* Skills Section */}
+        <section className="mb-12">
+          <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-6">
+            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+              Technical Skills
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {resumeData.skills.map((skillCategory, index) => (
+                <div key={index}>
+                  <h4 className="font-medium text-gray-900 mb-2">
+                    {skillCategory.category}
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {skillCategory.skills.map((skill, skillIndex) => (
+                      <Badge key={skillIndex} variant={skillCategory.variant}>
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
 
         {/* Projects Section */}
@@ -154,7 +154,35 @@ export default function HomePage() {
 
         {/* Publications & Writings Section */}
         <section className="mb-12">
-          <PublicationList mode="highlight" />
+          <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-6 text-center">
+            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+              Publications & Writings
+            </h3>
+            <p className="text-gray-600 mb-6">
+              Explore my technical publications, speaking engagements, and
+              thought leadership contributions spanning cloud native
+              technologies, AI/ML, and DevOps.
+            </p>
+            <a
+              href="/speaking"
+              className="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors inline-flex items-center gap-2"
+            >
+              View Speaking & Publications
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </a>
+          </div>
         </section>
 
         {/* Education & Volunteer Section */}
@@ -221,27 +249,7 @@ export default function HomePage() {
 
         {/* Open Source Contributions Section */}
         <section className="mb-12">
-          <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-6">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-6">
-              Open Source Contributions
-            </h3>
-            <div className="flex flex-wrap gap-3">
-              {[
-                "GoogleContainerTools/kaniko",
-                "fastapi-user",
-                "roman-right/beanie",
-                "offen/docker-volume-backup",
-              ].map((contribution, index) => (
-                <Badge key={index} variant="secondary" className="text-sm">
-                  {contribution}
-                </Badge>
-              ))}
-            </div>
-            <p className="mt-4 text-gray-600 text-sm">
-              Active contributor to various open source projects in the cloud
-              native and Python ecosystems.
-            </p>
-          </div>
+          <ContributionList mode="highlight" />
         </section>
 
         {/* Contact Section */}
@@ -290,13 +298,6 @@ export default function HomePage() {
                 className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
               >
                 Speaking Portfolio
-              </a>
-              <a
-                href="/resume.pdf"
-                download
-                className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
-              >
-                Download PDF
               </a>
             </div>
           </div>
