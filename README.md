@@ -209,7 +209,15 @@ src/
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) for detailed information on:
+
+- Setting up the development environment
+- Understanding the project architecture
+- Following coding standards and conventions
+- Submitting pull requests
+- Reporting issues and feature requests
+
+For major changes, please open an issue first to discuss what you would like to change.
 
 ## 📄 License
 
