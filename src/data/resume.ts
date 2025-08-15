@@ -277,6 +277,19 @@ export const resumeData: ResumeData = {
       description: "Master's thesis on strategic theory and decision-making",
       url: "https://drive.google.com/file/d/1AmjEnFqA7Ao_svBaBkyoaccR8WHlIltY/view?usp=sharing",
     },
+    {
+      title: "Theory of Probability",
+      type: "book",
+      description:
+        "A theoretical treatment of probability with Riemann-Stieltjes integral.",
+      url: "https://drive.google.com/file/d/0B3_JVAzZH1m9blhzb3oycDhBN28/view?usp=drive_link&resourcekey=0-9rpxF-egPh-pxuAQlYt8qg",
+    },
+    {
+      title: "Theory of Statistics",
+      type: "book",
+      description: "Rigorous treatment of statistics with proofs.",
+      url: "https://drive.google.com/file/d/0B3_JVAzZH1m9YUh0YjRSd0dnZDg/view?usp=drive_link&resourcekey=0-7M792w3TWJIHJul967L_tA",
+    },
     // Blog articles from Medium
     {
       title:
