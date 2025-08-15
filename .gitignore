@@ -46,3 +46,4 @@ Thumbs.db
 
 # Bun lockfile
 bun.lockb
+node_modules
