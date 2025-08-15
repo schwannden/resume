@@ -1,0 +1,44 @@
+# Schwannden Kuo Resume Website
+
+> A modern, responsive resume website built with Next.js 15, React 19, TypeScript, and Tailwind CSS 4 beta. Features comprehensive resume data, speaking engagements, publications, and professional portfolio showcasing for Schwannden Kuo, Software and System Architect.
+
+## Project Structure
+
+This is a data-driven resume website with centralized content management. All resume data is structured in TypeScript interfaces within `src/data/resume.ts`, including work experience, skills, publications, speaking engagements, awards, and open source contributions.
+
+The site uses Next.js app router architecture with static export configured for GitHub Pages deployment. Professional design optimized for readability and ATS compatibility.
+
+## Key Architecture
+
+- **Data Layer**: Centralized resume data with TypeScript interfaces in `src/data/resume.ts`
+- **Components**: Reusable UI components following shadcn/ui patterns in `src/components/ui/`
+- **Pages**: Main resume page and dedicated speaking portfolio page
+- **Deployment**: GitHub Actions CI/CD pipeline for automated GitHub Pages deployment
+- **Styling**: Tailwind CSS 4 beta with custom design system and professional typography
+
+## Development Commands
+
+- `npm run dev` - Start development server with Turbopack
+- `npm run build` - Build for production (static export)
+- `npm run lint` - Run ESLint
+- `npm run format` - Format with Prettier
+- `npm run type-check` - TypeScript type checking
+
+## Tech Stack Documentation
+
+- [Next.js 15](https://nextjs.org/docs): React framework with App Router and static export
+- [React 19](https://react.dev/reference/react): Frontend library with latest features
+- [Tailwind CSS 4](https://tailwindcss.com/docs/installation/framework-guides/nextjs): Utility-first CSS framework (beta)
+- [shadcn/ui](https://ui.shadcn.com/docs/installation/next): Component library patterns
+- [Turbopack](https://nextjs.org/docs/app/api-reference/turbopack): Fast development bundler
+- [TypeScript](https://www.typescriptlang.org/docs/): Type safety and developer experience
+
+## Project Files
+
+- `CLAUDE.md`: Development guidance for Claude Code
+- `src/data/resume.ts`: Centralized resume data and TypeScript interfaces
+- `src/app/layout.tsx`: Root layout with SEO metadata and structured data
+- `src/app/page.tsx`: Main resume page
+- `src/app/speaking/page.tsx`: Speaking engagements portfolio
+- `next.config.js`: Next.js configuration for static export
+- `.github/workflows/deploy.yml`: GitHub Actions deployment pipeline
