@@ -4,6 +4,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { MobileNav } from "./mobile-nav"
+import { AccessibilityConfig } from "@/components/ui/accessibility-config"
 import { Github } from "lucide-react"
 
 const navigationLinks = [
@@ -49,6 +50,7 @@ export function Header() {
               {link.label}
             </Link>
           ))}
+          <AccessibilityConfig />
           <a
             href="https://github.com/schwannden/resume"
             target="_blank"
@@ -62,6 +64,7 @@ export function Header() {
 
         {/* Mobile Navigation */}
         <div className="flex items-center space-x-2 md:hidden">
+          <AccessibilityConfig />
           <a
             href="https://github.com/schwannden/resume"
             target="_blank"

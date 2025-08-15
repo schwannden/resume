@@ -72,9 +72,9 @@ export function ContributionList({
 
   return (
     <>
-      <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-6">
+      <div className="max-w-4xl mx-auto bg-card rounded-lg shadow-sm p-6">
         <div className="flex items-center justify-between mb-6">
-          <h3 className="text-2xl font-semibold text-gray-900">
+          <h3 className="text-2xl font-semibold text-card-foreground">
             {mode === "highlight"
               ? "Open Source Contributions"
               : "Open Source Projects & Contributions"}
@@ -98,7 +98,7 @@ export function ContributionList({
             return (
               <div key={type}>
                 <div className="flex items-center gap-3 mb-4">
-                  <h4 className="text-lg font-medium text-gray-900">
+                  <h4 className="text-lg font-medium text-card-foreground">
                     {typeLabels[type as keyof typeof typeLabels] || type}
                   </h4>
                   <Badge variant={getTypeVariant(type)} className="text-xs">
@@ -128,7 +128,7 @@ export function ContributionList({
                           className={`border rounded-lg p-4 hover:shadow-md transition-shadow border-l-4 ${borderColors[index % borderColors.length]}`}
                         >
                           <div className="flex items-start justify-between gap-2 mb-2">
-                            <h5 className="font-medium text-gray-900 text-sm leading-tight">
+                            <h5 className="font-medium text-card-foreground text-sm leading-tight">
                               {contribution.name}
                             </h5>
                             <a
@@ -142,7 +142,7 @@ export function ContributionList({
                           </div>
 
                           {contribution.description && (
-                            <p className="text-gray-600 text-xs mb-2 line-clamp-2">
+                            <p className="text-muted-foreground text-xs mb-2 line-clamp-2">
                               {contribution.description}
                             </p>
                           )}
@@ -180,7 +180,7 @@ export function ContributionList({
                             className={`flex ${mode === "highlight" ? "items-start justify-between gap-2 mb-2" : "flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3"}`}
                           >
                             <h5
-                              className={`font-medium text-gray-900 flex-1 ${mode === "highlight" ? "text-sm" : "text-lg"}`}
+                              className={`font-medium text-card-foreground flex-1 ${mode === "highlight" ? "text-sm" : "text-lg"}`}
                             >
                               {contribution.name}
                             </h5>
@@ -208,7 +208,7 @@ export function ContributionList({
 
                           {contribution.description && (
                             <p
-                              className={`text-gray-600 mb-2 ${mode === "highlight" ? "text-sm" : "text-base mb-3"}`}
+                              className={`text-muted-foreground mb-2 ${mode === "highlight" ? "text-sm" : "text-base mb-3"}`}
                             >
                               {contribution.description}
                             </p>
@@ -218,14 +218,14 @@ export function ContributionList({
                             contribution.features.length > 0 &&
                             mode === "full" && (
                               <div className="space-y-1">
-                                <h6 className="text-sm font-medium text-gray-900 mb-2">
+                                <h6 className="text-sm font-medium text-card-foreground mb-2">
                                   Key Features & Impact:
                                 </h6>
                                 {contribution.features.map(
                                   (feature, featureIndex) => (
                                     <div
                                       key={featureIndex}
-                                      className="flex items-start gap-2 text-gray-600 text-sm"
+                                      className="flex items-start gap-2 text-muted-foreground text-sm"
                                     >
                                       <GitBranch className="w-3 h-3 mt-0.5 flex-shrink-0" />
                                       <span>{feature}</span>
@@ -244,14 +244,14 @@ export function ContributionList({
                                   .map((feature, featureIndex) => (
                                     <div
                                       key={featureIndex}
-                                      className="flex items-start gap-2 text-gray-600 text-xs"
+                                      className="flex items-start gap-2 text-muted-foreground text-xs"
                                     >
                                       <GitBranch className="w-2 h-2 mt-0.5 flex-shrink-0" />
                                       <span>{feature}</span>
                                     </div>
                                   ))}
                                 {contribution.features.length > 2 && (
-                                  <p className="text-xs text-gray-500 ml-4">
+                                  <p className="text-xs text-muted-foreground ml-4">
                                     +{contribution.features.length - 2} more
                                     features
                                   </p>
@@ -266,7 +266,7 @@ export function ContributionList({
 
                 {mode === "highlight" && remainingCount > 0 && (
                   <div className="mt-3 text-center">
-                    <p className="text-gray-600 text-sm">
+                    <p className="text-muted-foreground text-sm">
                       And {remainingCount} more{" "}
                       {typeLabels[
                         type as keyof typeof typeLabels
@@ -282,7 +282,7 @@ export function ContributionList({
 
         {mode === "highlight" && (
           <div className="mt-6 text-center">
-            <p className="text-gray-600 text-sm mb-4">
+            <p className="text-muted-foreground text-sm mb-4">
               Active contributor to various open source projects in the cloud
               native, Python, and DevOps ecosystems.
             </p>
@@ -292,11 +292,11 @@ export function ContributionList({
 
       {/* Additional GitHub Contributions Section - Only show in full mode */}
       {mode === "full" && (
-        <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-6 mt-6">
-          <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+        <div className="max-w-4xl mx-auto bg-card rounded-lg shadow-sm p-6 mt-6">
+          <h3 className="text-2xl font-semibold text-card-foreground mb-4">
             Additional GitHub Contributions
           </h3>
-          <p className="text-gray-600 mb-6">
+          <p className="text-muted-foreground mb-6">
             Beyond major projects, I actively contribute to various open source
             libraries and tools across the Python, cloud-native, and DevOps
             ecosystems. My contributions help improve developer experience, fix
@@ -313,7 +313,7 @@ export function ContributionList({
               >
                 <Badge
                   variant="outline"
-                  className="text-sm cursor-pointer hover:bg-gray-50"
+                  className="text-sm cursor-pointer hover:bg-accent"
                 >
                   {contribution.displayName}
                 </Badge>

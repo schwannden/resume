@@ -36,6 +36,7 @@ The site uses Next.js app router architecture with static export configured for 
 ## Project Files
 
 - `CLAUDE.md`: Development guidance for Claude Code
+- `docs/theme.md`: Complete theme system implementation guidelines and best practices
 - `src/data/resume.ts`: Centralized resume data and TypeScript interfaces
 - `src/app/layout.tsx`: Root layout with SEO metadata and structured data
 - `src/app/page.tsx`: Main resume page

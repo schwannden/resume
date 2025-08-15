@@ -75,9 +75,9 @@ export function PublicationList({ mode = "highlight" }: PublicationListProps) {
         })
 
   return (
-    <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-6">
+    <div className="max-w-4xl mx-auto bg-card rounded-lg shadow-sm p-6">
       <div className="flex items-center justify-between mb-6">
-        <h3 className="text-2xl font-semibold text-gray-900">
+        <h3 className="text-2xl font-semibold text-card-foreground">
           {mode === "highlight"
             ? "Publications & Writings"
             : "Selected Publications & Writings"}
@@ -100,7 +100,7 @@ export function PublicationList({ mode = "highlight" }: PublicationListProps) {
           return (
             <div key={type}>
               <div className="flex items-center gap-3 mb-4">
-                <h4 className="text-lg font-medium text-gray-900">
+                <h4 className="text-lg font-medium text-card-foreground">
                   {typeLabels[type as keyof typeof typeLabels] || type}
                 </h4>
                 <Badge variant={getTypeVariant(type)} className="text-xs">
@@ -113,12 +113,12 @@ export function PublicationList({ mode = "highlight" }: PublicationListProps) {
                 {items.map((pub, index) => (
                   <div
                     key={index}
-                    className="flex items-start gap-3 p-3 rounded border hover:bg-gray-50 transition-colors"
+                    className="flex items-start gap-3 p-3 rounded border hover:bg-accent transition-colors"
                   >
                     <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-start justify-between gap-2">
-                        <h5 className="font-medium text-gray-900 text-sm leading-tight">
+                        <h5 className="font-medium text-card-foreground text-sm leading-tight">
                           {pub.title}
                         </h5>
                         {pub.url && (
@@ -133,7 +133,7 @@ export function PublicationList({ mode = "highlight" }: PublicationListProps) {
                         )}
                       </div>
 
-                      <div className="flex flex-wrap items-center gap-2 mt-1 text-xs text-gray-500">
+                      <div className="flex flex-wrap items-center gap-2 mt-1 text-xs text-muted-foreground">
                         {pub.venue && <span>{pub.venue}</span>}
                         {pub.date && (
                           <>
@@ -153,7 +153,7 @@ export function PublicationList({ mode = "highlight" }: PublicationListProps) {
                       </div>
 
                       {pub.description && (
-                        <p className="text-gray-600 text-sm mt-1">
+                        <p className="text-muted-foreground text-sm mt-1">
                           {pub.description}
                         </p>
                       )}
@@ -164,7 +164,7 @@ export function PublicationList({ mode = "highlight" }: PublicationListProps) {
 
               {mode === "highlight" && remainingCount > 0 && (
                 <div className="mt-3 text-center">
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-muted-foreground text-sm">
                     And {remainingCount} more{" "}
                     {typeLabels[
                       type as keyof typeof typeLabels

@@ -26,22 +26,22 @@ export const metadata: Metadata = {
 
 export default function SpeakingPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+    <main className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8">
         {/* Header with Professional Summary */}
         <section className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl font-bold text-foreground mb-4">
             Speaking & Publications
           </h1>
-          <h2 className="text-xl text-gray-600 mb-6">
+          <h2 className="text-xl text-muted-foreground mb-6">
             Thought Leadership in Cloud Native & AI/ML
           </h2>
-          <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-6">
+          <div className="max-w-4xl mx-auto bg-card rounded-lg shadow-sm p-6">
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+              <h3 className="text-lg font-semibold text-card-foreground mb-3">
                 Advocacy & Engagement Summary
               </h3>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed">
                 Over the years, I have delivered a wide spectrum of public and
                 internal presentations, workshops, and technical briefings on
                 AI/ML, cloud-native infrastructure, industrial AIoT, and
@@ -58,13 +58,13 @@ export default function SpeakingPage() {
             <div className="mt-6 text-center">
               <Link
                 href="/"
-                className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors inline-block mr-4"
+                className="px-6 py-2 border border-input text-muted-foreground rounded-lg hover:bg-accent transition-colors inline-block mr-4"
               >
                 ← Back to Resume
               </Link>
               <Link
                 href="/contributions"
-                className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors inline-block"
+                className="px-6 py-2 border border-input text-muted-foreground rounded-lg hover:bg-accent transition-colors inline-block"
               >
                 View Contributions
               </Link>
@@ -84,8 +84,8 @@ export default function SpeakingPage() {
 
         {/* English Proficiency */}
         <section className="mb-12">
-          <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-6">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+          <div className="max-w-4xl mx-auto bg-card rounded-lg shadow-sm p-6">
+            <h3 className="text-2xl font-semibold text-card-foreground mb-6">
               English Proficiency
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -112,14 +112,14 @@ export default function SpeakingPage() {
                       <div className="flex items-start gap-2">
                         <Award className="w-5 h-5 text-yellow-600 mt-0.5 flex-shrink-0" />
                         <div className="flex-1">
-                          <h4 className="font-medium text-gray-900">
+                          <h4 className="font-medium text-card-foreground">
                             {award.title}
                           </h4>
-                          <p className="text-gray-600 text-sm">
+                          <p className="text-muted-foreground text-sm">
                             {award.organization}
                           </p>
                           {award.year && (
-                            <p className="text-gray-500 text-xs mt-1">
+                            <p className="text-muted-foreground text-xs mt-1">
                               {award.year}
                             </p>
                           )}
@@ -141,11 +141,11 @@ export default function SpeakingPage() {
 
         {/* Call to Action */}
         <section className="text-center">
-          <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-sm p-6">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+          <div className="max-w-2xl mx-auto bg-card rounded-lg shadow-sm p-6">
+            <h3 className="text-2xl font-semibold text-card-foreground mb-4">
               Let&apos;s Connect
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-muted-foreground mb-6">
               Interested in having me speak at your event or collaborate on
               technical content? I&apos;m always excited to share knowledge and
               engage with the community.
@@ -161,7 +161,7 @@ export default function SpeakingPage() {
                 href="https://www.linkedin.com/in/schwannden/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
+                className="px-6 py-2 border border-input text-muted-foreground rounded-lg hover:bg-accent transition-colors"
               >
                 LinkedIn Profile
               </a>
@@ -169,7 +169,7 @@ export default function SpeakingPage() {
                 href="https://medium.com/@schwanndenkuo"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
+                className="px-6 py-2 border border-input text-muted-foreground rounded-lg hover:bg-accent transition-colors"
               >
                 Medium Articles
               </a>

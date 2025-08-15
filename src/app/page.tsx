@@ -5,15 +5,17 @@ import { ContributionList } from "@/components/sections/contribution-list"
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+    <main className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8">
         {/* Header Section */}
         <section className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl font-bold text-foreground mb-4">
             {resumeData.name}
           </h1>
-          <h2 className="text-xl text-gray-600 mb-6">{resumeData.title}</h2>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-sm text-gray-500">
+          <h2 className="text-xl text-muted-foreground mb-6">
+            {resumeData.title}
+          </h2>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-sm text-muted-foreground">
             <span>📧 {resumeData.email}</span>
             <span>📱 {resumeData.phone}</span>
             <span>📍 Taiwan</span>
@@ -22,11 +24,11 @@ export default function HomePage() {
 
         {/* Professional Summary */}
         <section className="mb-12">
-          <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-6">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+          <div className="max-w-4xl mx-auto bg-card rounded-lg shadow-sm p-6">
+            <h3 className="text-2xl font-semibold text-card-foreground mb-4">
               Professional Summary
             </h3>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-muted-foreground leading-relaxed">
               {resumeData.summary}
             </p>
           </div>
@@ -34,8 +36,8 @@ export default function HomePage() {
 
         {/* Experience Section */}
         <section className="mb-12">
-          <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-6">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+          <div className="max-w-4xl mx-auto bg-card rounded-lg shadow-sm p-6">
+            <h3 className="text-2xl font-semibold text-card-foreground mb-6">
               Work Experience
             </h3>
             <div className="space-y-6">
@@ -53,13 +55,13 @@ export default function HomePage() {
                     key={index}
                     className={`border-l-4 ${borderColors[index % borderColors.length]} pl-6`}
                   >
-                    <h4 className="text-lg font-medium text-gray-900">
+                    <h4 className="text-lg font-medium text-card-foreground">
                       {exp.title}
                     </h4>
-                    <p className="text-gray-600">
+                    <p className="text-muted-foreground">
                       {exp.company} • {exp.duration}
                     </p>
-                    <ul className="mt-3 text-gray-700 space-y-1">
+                    <ul className="mt-3 text-card-foreground space-y-1">
                       {exp.responsibilities.map((responsibility, respIndex) => (
                         <li key={respIndex}>• {responsibility}</li>
                       ))}
@@ -78,14 +80,14 @@ export default function HomePage() {
 
         {/* Skills Section */}
         <section className="mb-12">
-          <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-6">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+          <div className="max-w-4xl mx-auto bg-card rounded-lg shadow-sm p-6">
+            <h3 className="text-2xl font-semibold text-card-foreground mb-4">
               Technical Skills
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {resumeData.skills.map((skillCategory, index) => (
                 <div key={index}>
-                  <h4 className="font-medium text-gray-900 mb-2">
+                  <h4 className="font-medium text-card-foreground mb-2">
                     {skillCategory.category}
                   </h4>
                   <div className="flex flex-wrap gap-2">
@@ -103,11 +105,11 @@ export default function HomePage() {
 
         {/* Publications & Writings Section */}
         <section className="mb-12">
-          <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-6 text-center">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+          <div className="max-w-4xl mx-auto bg-card rounded-lg shadow-sm p-6 text-center">
+            <h3 className="text-2xl font-semibold text-card-foreground mb-4">
               Publications & Writings
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-muted-foreground mb-6">
               Explore my technical publications, speaking engagements, and
               thought leadership contributions spanning cloud native
               technologies, AI/ML, and DevOps.
@@ -141,14 +143,14 @@ export default function HomePage() {
 
         {/* Education & Volunteer Section */}
         <section className="mb-12">
-          <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-6">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+          <div className="max-w-4xl mx-auto bg-card rounded-lg shadow-sm p-6">
+            <h3 className="text-2xl font-semibold text-card-foreground mb-6">
               Education & Volunteer Experience
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Education */}
               <div>
-                <h4 className="text-lg font-medium text-gray-900 mb-4">
+                <h4 className="text-lg font-medium text-card-foreground mb-4">
                   Education
                 </h4>
                 <div className="space-y-4">
@@ -157,14 +159,14 @@ export default function HomePage() {
                       key={index}
                       className="border-l-4 border-purple-500 pl-4"
                     >
-                      <h5 className="font-medium text-gray-900">
+                      <h5 className="font-medium text-card-foreground">
                         {edu.degree}
                       </h5>
-                      <p className="text-gray-600">
+                      <p className="text-muted-foreground">
                         {edu.institution} • {edu.year}
                       </p>
                       {edu.activities && (
-                        <ul className="mt-2 text-sm text-gray-700 space-y-1">
+                        <ul className="mt-2 text-sm text-muted-foreground space-y-1">
                           {edu.activities.map((activity, actIndex) => (
                             <li key={actIndex}>• {activity}</li>
                           ))}
@@ -177,7 +179,7 @@ export default function HomePage() {
 
               {/* Volunteer Experience */}
               <div>
-                <h4 className="text-lg font-medium text-gray-900 mb-4">
+                <h4 className="text-lg font-medium text-card-foreground mb-4">
                   Volunteer Experience
                 </h4>
                 <div className="space-y-4">
@@ -186,11 +188,13 @@ export default function HomePage() {
                       key={index}
                       className="border-l-4 border-orange-500 pl-4"
                     >
-                      <h5 className="font-medium text-gray-900">{vol.role}</h5>
-                      <p className="text-gray-600">
+                      <h5 className="font-medium text-card-foreground">
+                        {vol.role}
+                      </h5>
+                      <p className="text-muted-foreground">
                         {vol.organization} • {vol.duration}
                       </p>
-                      <p className="mt-2 text-sm text-gray-700">
+                      <p className="mt-2 text-sm text-muted-foreground">
                         {vol.description}
                       </p>
                     </div>
@@ -203,11 +207,11 @@ export default function HomePage() {
 
         {/* Contact Section */}
         <section className="text-center">
-          <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-sm p-6">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+          <div className="max-w-2xl mx-auto bg-card rounded-lg shadow-sm p-6">
+            <h3 className="text-2xl font-semibold text-card-foreground mb-4">
               Let&apos;s Connect
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-muted-foreground mb-6">
               I&apos;m always interested in discussing new opportunities and
               exciting projects in cloud architecture and DevOps.
             </p>
@@ -222,7 +226,7 @@ export default function HomePage() {
                 href={externalLinks.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
+                className="px-6 py-2 border border-input text-foreground rounded-lg hover:bg-accent transition-colors"
               >
                 LinkedIn Profile
               </a>
@@ -230,7 +234,7 @@ export default function HomePage() {
                 href={externalLinks.medium}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
+                className="px-6 py-2 border border-input text-foreground rounded-lg hover:bg-accent transition-colors"
               >
                 Medium Articles
               </a>
@@ -238,13 +242,13 @@ export default function HomePage() {
                 href={externalLinks.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
+                className="px-6 py-2 border border-input text-foreground rounded-lg hover:bg-accent transition-colors"
               >
                 GitHub Profile
               </a>
               <a
                 href="/speaking"
-                className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
+                className="px-6 py-2 border border-input text-foreground rounded-lg hover:bg-accent transition-colors"
               >
                 Speaking Portfolio
               </a>

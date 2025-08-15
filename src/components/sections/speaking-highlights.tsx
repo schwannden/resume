@@ -40,8 +40,8 @@ export function SpeakingHighlights({
   }
 
   return (
-    <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-6">
-      <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+    <div className="max-w-4xl mx-auto bg-card rounded-lg shadow-sm p-6">
+      <h3 className="text-2xl font-semibold text-card-foreground mb-6">
         {mode === "highlight" ? "Speaking Highlights" : "Speaking Engagements"}
       </h3>
 
@@ -62,7 +62,7 @@ export function SpeakingHighlights({
               className={`border-l-4 ${borderColors[index % borderColors.length]} pl-6`}
             >
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
-                <h4 className="text-lg font-medium text-gray-900 flex-1">
+                <h4 className="text-lg font-medium text-card-foreground flex-1">
                   {talk.title}
                 </h4>
                 <Badge
@@ -73,7 +73,7 @@ export function SpeakingHighlights({
                 </Badge>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 mb-3 text-sm text-gray-600">
+              <div className="flex flex-col sm:flex-row gap-4 mb-3 text-sm text-muted-foreground">
                 <div className="flex items-center gap-1">
                   <Calendar className="w-4 h-4" />
                   <span>{talk.date}</span>
@@ -85,10 +85,10 @@ export function SpeakingHighlights({
               </div>
 
               {talk.description && (
-                <p className="text-gray-700 mb-3">{talk.description}</p>
+                <p className="text-muted-foreground mb-3">{talk.description}</p>
               )}
 
-              <p className="text-gray-600 text-sm mb-3">
+              <p className="text-muted-foreground text-sm mb-3">
                 <strong>Audience:</strong> {talk.audience}
               </p>
 
@@ -136,7 +136,7 @@ export function SpeakingHighlights({
 
       {mode === "highlight" && resumeData.talks.length > 4 && (
         <div className="mt-6 text-center">
-          <p className="text-gray-600 text-sm">
+          <p className="text-muted-foreground text-sm">
             And {resumeData.talks.length - 4} more speaking engagements...
           </p>
         </div>
