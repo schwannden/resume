@@ -4,6 +4,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { MobileNav } from "./mobile-nav"
+import { Github } from "lucide-react"
 
 const navigationLinks = [
   {
@@ -16,7 +17,7 @@ const navigationLinks = [
   },
   {
     href: "/contributions",
-    label: "Contributions",
+    label: "Community",
   },
 ]
 
@@ -48,10 +49,28 @@ export function Header() {
               {link.label}
             </Link>
           ))}
+          <a
+            href="https://github.com/schwannden/resume"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub repository"
+            className="text-foreground/60 hover:text-foreground transition-colors"
+          >
+            <Github className="h-5 w-5" />
+          </a>
         </nav>
 
         {/* Mobile Navigation */}
         <div className="flex items-center space-x-2 md:hidden">
+          <a
+            href="https://github.com/schwannden/resume"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub repository"
+            className="text-foreground/60 hover:text-foreground transition-colors"
+          >
+            <Github className="h-5 w-5" />
+          </a>
           <MobileNav />
         </div>
       </div>

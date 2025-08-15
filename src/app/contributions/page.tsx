@@ -1,6 +1,5 @@
 import { Metadata } from "next"
-import Link from "next/link"
-import { resumeData } from "@/data/resume"
+import { resumeData, additionalGitHubContributions } from "@/data/resume"
 import { Badge } from "@/components/ui/badge"
 import { ExternalLink, GitBranch } from "lucide-react"
 
@@ -37,7 +36,7 @@ export default function ContributionsPage() {
     {} as Record<string, typeof resumeData.contributions>
   )
 
-  const typeOrder = ["tool", "community", "github"]
+  const typeOrder = ["tool", "community"]
   const typeLabels = {
     tool: "Research & Development Tools",
     community: "Community Projects",
@@ -63,54 +62,11 @@ export default function ContributionsPage() {
         {/* Header with Professional Summary */}
         <section className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Open Source Contributions
+            Open Source Community
           </h1>
           <h2 className="text-xl text-gray-600 mb-6">
             Community Projects & Development Tools
           </h2>
-          <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-6">
-            <div className="mb-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                Open Source Philosophy
-              </h3>
-              <p className="text-gray-700 leading-relaxed">
-                I believe in the power of open source to drive innovation,
-                education, and collaborative problem-solving. My contributions
-                span research tools, community projects, and production
-                libraries that help developers build better software. From
-                biostatistics tools used in academic research to cloud-native
-                infrastructure projects and Python libraries, each contribution
-                aims to solve real-world problems and empower others.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                Impact & Recognition
-              </h3>
-              <p className="text-gray-700 leading-relaxed">
-                My open source work has been featured in academic publications,
-                industry communities, and adopted by organizations worldwide.
-                Projects range from groundbreaking biostatistics tools published
-                in peer-reviewed journals to infrastructure solutions that
-                streamline developer workflows and IoT platforms showcased by
-                major tech companies.
-              </p>
-            </div>
-            <div className="mt-6 text-center">
-              <Link
-                href="/"
-                className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors inline-block mr-4"
-              >
-                ← Back to Resume
-              </Link>
-              <Link
-                href="/speaking"
-                className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors inline-block"
-              >
-                Speaking & Publications
-              </Link>
-            </div>
-          </div>
         </section>
 
         {/* Open Source Contributions by Category */}
@@ -223,27 +179,22 @@ export default function ContributionsPage() {
               experience, fix critical bugs, and add essential features.
             </p>
             <div className="flex flex-wrap gap-3 mb-4">
-              {[
-                "GoogleContainerTools/kaniko",
-                "fastapi-users/fastapi-users",
-                "BeanieODM/beanie",
-                "offen/docker-volume-backup",
-                "locustio/locust",
-              ].map((contribution, index) => (
-                <Badge key={index} variant="outline" className="text-sm">
-                  {contribution}
-                </Badge>
+              {additionalGitHubContributions.map((contribution, index) => (
+                <a
+                  key={index}
+                  href={contribution.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:scale-105 transition-transform"
+                >
+                  <Badge
+                    variant="outline"
+                    className="text-sm cursor-pointer hover:bg-gray-50"
+                  >
+                    {contribution.displayName}
+                  </Badge>
+                </a>
               ))}
-            </div>
-            <div className="flex gap-4">
-              <a
-                href="https://github.com/schwannden"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
-              >
-                View All on GitHub
-              </a>
             </div>
           </div>
         </section>

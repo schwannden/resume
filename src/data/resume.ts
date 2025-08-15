@@ -291,6 +291,7 @@ export const resumeData: ResumeData = {
       type: "blog",
       venue: "Medium",
       views: "4.3K views",
+      url: "https://medium.com/devops-dev/deploy-airflow-to-gke-from-argocd-on-gke-with-workload-identity-d51b248895c0",
     },
     {
       title: "Multiple K8s Cluster Management",
@@ -456,6 +457,11 @@ export const resumeData: ResumeData = {
       type: "community",
       url: "https://github.com/schwannden/chabod",
       description: "Multi-tenant open source church management system",
+      features: [
+        "Multi-tenant open source CMS",
+        "Vibe Coding Enabled",
+        "PRP (priject requirement prompt) driven development",
+      ],
     },
     {
       name: "FastAPI Users",
@@ -523,6 +529,16 @@ export const externalLinks = {
   github: "https://github.com/schwannden",
   linkedin: "https://www.linkedin.com/in/schwannden/",
 }
+
+// Additional GitHub contributions for display
+export const additionalGitHubContributions = resumeData.contributions
+  .filter((contrib) => contrib.type === "github")
+  .map((contrib) => ({
+    name: contrib.name,
+    url: contrib.url,
+    // Extract repository path from GitHub URL for display
+    displayName: contrib.url.replace("https://github.com/", ""),
+  }))
 
 // Open source contributions mentioned in resume
 export const openSourceContributions = [

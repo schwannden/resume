@@ -1,4 +1,4 @@
-import { resumeData } from "@/data/resume"
+import { resumeData, additionalGitHubContributions } from "@/data/resume"
 import { Badge } from "@/components/ui/badge"
 import { ExternalLink, GitBranch } from "lucide-react"
 
@@ -24,7 +24,7 @@ export function ContributionList({
   // Define display order and limits for highlight mode
   const typeOrder = ["tool", "community", "github"]
   const typeLabels = {
-    tool: "Research Tools",
+    tool: mode === "full" ? "Research & Development Tools" : "Research Tools",
     community: "Community Projects",
     github: "Open Source Libraries",
   }
@@ -58,7 +58,9 @@ export function ContributionList({
 
   const typesToShow =
     mode === "highlight"
-      ? typeOrder.filter((type) => groupedContributions[type])
+      ? typeOrder.filter(
+          (type) => type !== "github" && groupedContributions[type]
+        )
       : Object.keys(groupedContributions).sort((a, b) => {
           const aIndex = typeOrder.indexOf(a)
           const bIndex = typeOrder.indexOf(b)
@@ -69,189 +71,267 @@ export function ContributionList({
         })
 
   return (
-    <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-6">
-      <div className="flex items-center justify-between mb-6">
-        <h3 className="text-2xl font-semibold text-gray-900">
-          {mode === "highlight"
-            ? "Open Source Contributions"
-            : "Selected Open Source Contributions"}
-        </h3>
-        {mode === "highlight" && (
-          <a
-            href="/contributions"
-            className="text-blue-600 hover:text-blue-800 text-sm font-medium"
-          >
-            View all contributions →
-          </a>
-        )}
-      </div>
+    <>
+      <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-6">
+        <div className="flex items-center justify-between mb-6">
+          <h3 className="text-2xl font-semibold text-gray-900">
+            {mode === "highlight"
+              ? "Open Source Contributions"
+              : "Open Source Projects & Contributions"}
+          </h3>
+          {mode === "highlight" && (
+            <a
+              href="/contributions"
+              className="text-blue-600 hover:text-blue-800 text-sm font-medium"
+            >
+              View all contributions →
+            </a>
+          )}
+        </div>
 
-      <div className="space-y-8">
-        {typesToShow.map((type) => {
-          const items = getDisplayItems(type, groupedContributions[type])
-          const remainingCount =
-            groupedContributions[type].length - items.length
+        <div className="space-y-8">
+          {typesToShow.map((type) => {
+            const items = getDisplayItems(type, groupedContributions[type])
+            const remainingCount =
+              groupedContributions[type].length - items.length
 
-          return (
-            <div key={type}>
-              <div className="flex items-center gap-3 mb-4">
-                <h4 className="text-lg font-medium text-gray-900">
-                  {typeLabels[type as keyof typeof typeLabels] || type}
-                </h4>
-                <Badge variant={getTypeVariant(type)} className="text-xs">
-                  {groupedContributions[type].length}{" "}
-                  {groupedContributions[type].length === 1
-                    ? "project"
-                    : "projects"}
-                </Badge>
-              </div>
-
-              {/* Use grid for github type, vertical layout for others */}
-              {type === "github" ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {items.map((contribution, index) => {
-                    const borderColors = [
-                      "border-blue-500",
-                      "border-green-500",
-                      "border-purple-500",
-                      "border-orange-500",
-                      "border-red-500",
-                      "border-indigo-500",
-                    ]
-
-                    return (
-                      <div
-                        key={index}
-                        className={`border rounded-lg p-4 hover:shadow-md transition-shadow border-l-4 ${borderColors[index % borderColors.length]}`}
-                      >
-                        <div className="flex items-start justify-between gap-2 mb-2">
-                          <h5 className="font-medium text-gray-900 text-sm leading-tight">
-                            {contribution.name}
-                          </h5>
-                          <a
-                            href={contribution.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-blue-600 hover:text-blue-800 flex-shrink-0"
-                          >
-                            <ExternalLink className="w-3 h-3" />
-                          </a>
-                        </div>
-
-                        {contribution.description && (
-                          <p className="text-gray-600 text-xs mb-2 line-clamp-2">
-                            {contribution.description}
-                          </p>
-                        )}
-
-                        <Badge
-                          variant={getTypeVariant(contribution.type)}
-                          className="text-xs"
-                        >
-                          {contribution.type}
-                        </Badge>
-                      </div>
-                    )
-                  })}
+            return (
+              <div key={type}>
+                <div className="flex items-center gap-3 mb-4">
+                  <h4 className="text-lg font-medium text-gray-900">
+                    {typeLabels[type as keyof typeof typeLabels] || type}
+                  </h4>
+                  <Badge variant={getTypeVariant(type)} className="text-xs">
+                    {groupedContributions[type].length}{" "}
+                    {groupedContributions[type].length === 1
+                      ? "project"
+                      : "projects"}
+                  </Badge>
                 </div>
-              ) : (
-                <div className="space-y-4">
-                  {items.map((contribution, index) => {
-                    const borderColors = [
-                      "border-blue-500",
-                      "border-green-500",
-                      "border-purple-500",
-                      "border-orange-500",
-                      "border-red-500",
-                      "border-indigo-500",
-                    ]
 
-                    return (
-                      <div
-                        key={index}
-                        className={`border-l-4 ${borderColors[index % borderColors.length]} pl-4 py-2`}
-                      >
-                        <div className="flex items-start justify-between gap-2 mb-2">
-                          <h5 className="font-medium text-gray-900 text-sm">
-                            {contribution.name}
-                          </h5>
-                          <div className="flex items-center gap-2 flex-shrink-0">
-                            <Badge
-                              variant={getTypeVariant(contribution.type)}
-                              className="text-xs"
-                            >
-                              {contribution.type}
-                            </Badge>
+                {/* Use grid for github type, vertical layout for others */}
+                {type === "github" ? (
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {items.map((contribution, index) => {
+                      const borderColors = [
+                        "border-blue-500",
+                        "border-green-500",
+                        "border-purple-500",
+                        "border-orange-500",
+                        "border-red-500",
+                        "border-indigo-500",
+                      ]
+
+                      return (
+                        <div
+                          key={index}
+                          className={`border rounded-lg p-4 hover:shadow-md transition-shadow border-l-4 ${borderColors[index % borderColors.length]}`}
+                        >
+                          <div className="flex items-start justify-between gap-2 mb-2">
+                            <h5 className="font-medium text-gray-900 text-sm leading-tight">
+                              {contribution.name}
+                            </h5>
                             <a
                               href={contribution.url}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-blue-600 hover:text-blue-800"
+                              className="text-blue-600 hover:text-blue-800 flex-shrink-0"
                             >
                               <ExternalLink className="w-3 h-3" />
                             </a>
                           </div>
+
+                          {contribution.description && (
+                            <p className="text-gray-600 text-xs mb-2 line-clamp-2">
+                              {contribution.description}
+                            </p>
+                          )}
+
+                          <Badge
+                            variant={getTypeVariant(contribution.type)}
+                            className="text-xs"
+                          >
+                            {contribution.type}
+                          </Badge>
                         </div>
+                      )
+                    })}
+                  </div>
+                ) : (
+                  <div
+                    className={mode === "highlight" ? "space-y-4" : "space-y-6"}
+                  >
+                    {items.map((contribution, index) => {
+                      const borderColors = [
+                        "border-blue-500",
+                        "border-green-500",
+                        "border-purple-500",
+                        "border-orange-500",
+                        "border-red-500",
+                        "border-indigo-500",
+                      ]
 
-                        {contribution.description && (
-                          <p className="text-gray-600 text-sm mb-2">
-                            {contribution.description}
-                          </p>
-                        )}
+                      return (
+                        <div
+                          key={index}
+                          className={`border-l-4 ${borderColors[index % borderColors.length]} ${mode === "highlight" ? "pl-4 py-2" : "pl-6"}`}
+                        >
+                          <div
+                            className={`flex ${mode === "highlight" ? "items-start justify-between gap-2 mb-2" : "flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3"}`}
+                          >
+                            <h5
+                              className={`font-medium text-gray-900 flex-1 ${mode === "highlight" ? "text-sm" : "text-lg"}`}
+                            >
+                              {contribution.name}
+                            </h5>
+                            <div className="flex items-center gap-2 flex-shrink-0">
+                              <Badge
+                                variant={getTypeVariant(contribution.type)}
+                                className="text-xs"
+                              >
+                                {contribution.type}
+                              </Badge>
+                              <a
+                                href={contribution.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-blue-600 hover:text-blue-800"
+                              >
+                                <ExternalLink
+                                  className={
+                                    mode === "highlight" ? "w-3 h-3" : "w-4 h-4"
+                                  }
+                                />
+                              </a>
+                            </div>
+                          </div>
 
-                        {contribution.features &&
-                          contribution.features.length > 0 && (
-                            <div className="space-y-1">
-                              {contribution.features
-                                .slice(0, mode === "highlight" ? 2 : undefined)
-                                .map((feature, featureIndex) => (
-                                  <div
-                                    key={featureIndex}
-                                    className="flex items-start gap-2 text-gray-600 text-xs"
-                                  >
-                                    <GitBranch className="w-2 h-2 mt-0.5 flex-shrink-0" />
-                                    <span>{feature}</span>
-                                  </div>
-                                ))}
-                              {mode === "highlight" &&
-                                contribution.features.length > 2 && (
+                          {contribution.description && (
+                            <p
+                              className={`text-gray-600 mb-2 ${mode === "highlight" ? "text-sm" : "text-base mb-3"}`}
+                            >
+                              {contribution.description}
+                            </p>
+                          )}
+
+                          {contribution.features &&
+                            contribution.features.length > 0 &&
+                            mode === "full" && (
+                              <div className="space-y-1">
+                                <h6 className="text-sm font-medium text-gray-900 mb-2">
+                                  Key Features & Impact:
+                                </h6>
+                                {contribution.features.map(
+                                  (feature, featureIndex) => (
+                                    <div
+                                      key={featureIndex}
+                                      className="flex items-start gap-2 text-gray-600 text-sm"
+                                    >
+                                      <GitBranch className="w-3 h-3 mt-0.5 flex-shrink-0" />
+                                      <span>{feature}</span>
+                                    </div>
+                                  )
+                                )}
+                              </div>
+                            )}
+
+                          {contribution.features &&
+                            contribution.features.length > 0 &&
+                            mode === "highlight" && (
+                              <div className="space-y-1">
+                                {contribution.features
+                                  .slice(0, 2)
+                                  .map((feature, featureIndex) => (
+                                    <div
+                                      key={featureIndex}
+                                      className="flex items-start gap-2 text-gray-600 text-xs"
+                                    >
+                                      <GitBranch className="w-2 h-2 mt-0.5 flex-shrink-0" />
+                                      <span>{feature}</span>
+                                    </div>
+                                  ))}
+                                {contribution.features.length > 2 && (
                                   <p className="text-xs text-gray-500 ml-4">
                                     +{contribution.features.length - 2} more
                                     features
                                   </p>
                                 )}
-                            </div>
-                          )}
-                      </div>
-                    )
-                  })}
-                </div>
-              )}
+                              </div>
+                            )}
+                        </div>
+                      )
+                    })}
+                  </div>
+                )}
 
-              {mode === "highlight" && remainingCount > 0 && (
-                <div className="mt-3 text-center">
-                  <p className="text-gray-600 text-sm">
-                    And {remainingCount} more{" "}
-                    {typeLabels[
-                      type as keyof typeof typeLabels
-                    ]?.toLowerCase() || type}
-                    ...
-                  </p>
-                </div>
-              )}
-            </div>
-          )
-        })}
+                {mode === "highlight" && remainingCount > 0 && (
+                  <div className="mt-3 text-center">
+                    <p className="text-gray-600 text-sm">
+                      And {remainingCount} more{" "}
+                      {typeLabels[
+                        type as keyof typeof typeLabels
+                      ]?.toLowerCase() || type}
+                      ...
+                    </p>
+                  </div>
+                )}
+              </div>
+            )
+          })}
+        </div>
+
+        {mode === "highlight" && (
+          <div className="mt-6 text-center">
+            <p className="text-gray-600 text-sm mb-4">
+              Active contributor to various open source projects in the cloud
+              native, Python, and DevOps ecosystems.
+            </p>
+          </div>
+        )}
       </div>
 
-      {mode === "highlight" && (
-        <div className="mt-6 text-center">
-          <p className="text-gray-600 text-sm mb-4">
-            Active contributor to various open source projects in the cloud
-            native, Python, and DevOps ecosystems.
+      {/* Additional GitHub Contributions Section - Only show in full mode */}
+      {mode === "full" && (
+        <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-6 mt-6">
+          <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+            Additional GitHub Contributions
+          </h3>
+          <p className="text-gray-600 mb-6">
+            Beyond major projects, I actively contribute to various open source
+            libraries and tools across the Python, cloud-native, and DevOps
+            ecosystems. My contributions help improve developer experience, fix
+            critical bugs, and add essential features.
           </p>
+          <div className="flex flex-wrap gap-3 mb-4">
+            {additionalGitHubContributions.map((contribution, index) => (
+              <a
+                key={index}
+                href={contribution.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:scale-105 transition-transform"
+              >
+                <Badge
+                  variant="outline"
+                  className="text-sm cursor-pointer hover:bg-gray-50"
+                >
+                  {contribution.displayName}
+                </Badge>
+              </a>
+            ))}
+          </div>
+          <div className="flex gap-4">
+            <a
+              href="https://github.com/schwannden"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
+            >
+              View All on GitHub
+            </a>
+          </div>
         </div>
       )}
-    </div>
+    </>
   )
 }

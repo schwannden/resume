@@ -101,57 +101,6 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Projects Section */}
-        <section className="mb-12">
-          <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-6">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-6">
-              Featured Projects
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {resumeData.projects.map((project, index) => (
-                <div
-                  key={index}
-                  className="border rounded-lg p-4 hover:shadow-md transition-shadow"
-                >
-                  <div className="flex items-start justify-between mb-2">
-                    <h4 className="font-medium text-gray-900 flex-1">
-                      {project.name}
-                    </h4>
-                    {project.url && (
-                      <a
-                        href={project.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="ml-2 text-blue-600 hover:text-blue-800 text-sm"
-                      >
-                        {project.type === "github" ? "View Code" : "View"}
-                      </a>
-                    )}
-                  </div>
-                  <p className="text-gray-600 text-sm mb-3">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-1 mb-3">
-                    {project.technologies.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  {project.type && (
-                    <div className="text-xs text-gray-500 capitalize">
-                      {project.type} project
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Publications & Writings Section */}
         <section className="mb-12">
           <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-6 text-center">
@@ -183,6 +132,11 @@ export default function HomePage() {
               </svg>
             </a>
           </div>
+        </section>
+
+        {/* Open Source Contributions Section */}
+        <section className="mb-12">
+          <ContributionList mode="highlight" />
         </section>
 
         {/* Education & Volunteer Section */}
@@ -245,11 +199,6 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-        </section>
-
-        {/* Open Source Contributions Section */}
-        <section className="mb-12">
-          <ContributionList mode="highlight" />
         </section>
 
         {/* Contact Section */}

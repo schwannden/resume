@@ -4,7 +4,7 @@ import { resumeData } from "@/data/resume"
 import { Badge } from "@/components/ui/badge"
 import { SpeakingHighlights } from "@/components/sections/speaking-highlights"
 import { PublicationList } from "@/components/sections/publication-list"
-import { ExternalLink, Award, GitBranch } from "lucide-react"
+import { Award } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Speaking & Publications - Schwannden Kuo",
@@ -37,21 +37,6 @@ export default function SpeakingPage() {
             Thought Leadership in Cloud Native & AI/ML
           </h2>
           <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-6">
-            <div className="mb-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                Professional Summary
-              </h3>
-              <p className="text-gray-700 leading-relaxed">
-                Seasoned software and systems architect with a proven track
-                record in the data products and cloud-native ecosystem, spanning
-                roles from software engineer and data scientist to DevOps lead
-                and director. Proficient in Python, Scala, and TypeScript, with
-                hands-on expertise across AWS, Kubernetes, and CI/CD. Passionate
-                about cloud technologies and open source, adept at translating
-                complex technical challenges into elegant, scalable solutions
-                that bridge the gap between R&D and business outcomes.
-              </p>
-            </div>
             <div>
               <h3 className="text-lg font-semibold text-gray-900 mb-3">
                 Advocacy & Engagement Summary
