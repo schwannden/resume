@@ -211,10 +211,6 @@ export default function HomePage() {
             <h3 className="text-2xl font-semibold text-card-foreground mb-4">
               Let&apos;s Connect
             </h3>
-            <p className="text-muted-foreground mb-6">
-              I&apos;m always interested in discussing new opportunities and
-              exciting projects in cloud architecture and DevOps.
-            </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
               <a
                 href={`mailto:${resumeData.email}`}
