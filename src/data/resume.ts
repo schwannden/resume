@@ -71,7 +71,6 @@ export interface Education {
 export interface ResumeData {
   name: string
   email: string
-  phone: string
   linkedin: string
   title: string
   summary: string
@@ -94,7 +93,6 @@ export interface ResumeData {
 export const resumeData: ResumeData = {
   name: "Schwannden Kuo",
   email: "schwannden@gmail.com",
-  phone: "(886) 972006041",
   linkedin: "https://www.linkedin.com/in/schwannden/",
   title: "Software and System Architect",
   summary:
@@ -106,8 +104,8 @@ export const resumeData: ResumeData = {
       company: "Ubiquiti",
       duration: "Aug 2024 - Present",
       responsibilities: [
-        "Implement and operate Single Sign On servie with millions of users and 1000~10000 rps workload",
-        "Design and implement the best security, authentication, authorization practices to drive company product growth.",
+        "Implemented and operated high-scale Single Sign-On service (millions of users, 1K–10K RPS workload) on AWS, ensuring secure identity management across global products.",
+        "Collaborated with product teams to map security & SSO capabilities into direct business value, enabling faster customer onboarding and reducing account-related support costs.",
       ],
     },
     {
@@ -115,9 +113,9 @@ export const resumeData: ResumeData = {
       company: "Dell",
       duration: "Jan 2023 - Ayg 2024",
       responsibilities: [
-        "Transformed a legacy integration test platform to modernized cloud native architecture, saves 50% operation cost, and shift left testing to increase lead time. Accelerate complex product build time by 400%, modernized build infrastructure.",
-        "Cultivate a culture of documentation through CI/CD tools.",
-        "Cloud native evangelist. Pushing better CI/CD adoption through various technologies (Prefect, Github action, Argo, Kustomize, Helm...etc). Shift left cloud security awareness (continuous security patch, SBOM, oss-scanner, trivy).",
+        "Modernized a legacy integration test platform into a cloud-native architecture (AWS & Kubernetes), reducing operational costs by 50% and accelerating product build time by 400%, directly improving time-to-market.",
+        "Advocated for developer-first practices by gathering feedback from engineering teams and influencing CI/CD adoption (GitHub Actions, Argo, Kustomize, Helm).",
+        "Established cloud security best practices (automated vulnerability scanning, SBOM, Trivy) to align engineering efficiency with enterprise compliance.",
       ],
     },
     {
@@ -125,8 +123,9 @@ export const resumeData: ResumeData = {
       company: "MoBagel",
       duration: "Sep 2021 - Dec 2022",
       responsibilities: [
-        "Architecting the new AI advertisement platform (8ndpoint.com), worked as fullstack engineer to build product from scratch. Design and implement the SSO strategies (both authentication and authorization).",
-        "Introduced k8s, airflow, rancher, minio, argocd, longhorn. Solve scalability and maintainability issues with cloud native solutions. Design and executed migration that lift our product on to GCP (using GAE, GKE, cloud SQL, VPC Network Peering, Big Query, ...etc), design the necessary project structure, network structure, IAM, service account. Use CI/CD to give developers the best flexibility while strictly following the principle of least privilege.",
+        "Architected the new AI-driven advertising platform (8ndpoint.com), integrating generative personalization features to increase campaign engagement.",
+        "Led migration of core services to hybrid-cloud environments (GCP: GKE, Cloud SQL, BigQuery, EC2, S3, VPC, Hosted: MinIO, Longhorn, Rancher, Orchestration: ArgoCD, Airflow), designing scalable IAM and network structures.",
+        "Partnered closely with product managers to translate AI/ML features into customer-facing benefits, improving campaign ROI for enterprise clients.",
       ],
     },
     {

@@ -127,7 +127,6 @@ Map resume.md content to existing UI sections:
 interface ResumeData {
   name: string // "Schwannden Kuo"
   email: string // "schwannden@gmail.com"
-  phone: string // "(886) 972006041"
   linkedin: string // LinkedIn URL
   title: string // "Software and System architect"
   summary: string // Professional summary paragraph
@@ -155,7 +154,6 @@ Task 2 - Header & Contact Update:
     - REPLACE "John Doe" with "Schwannden Kuo"
     - REPLACE "Full Stack Developer" with "Software and System architect"
     - UPDATE email to "schwannden@gmail.com"
-    - UPDATE phone to "(886) 972006041"
     - ADD location if needed
 
 Task 3 - Professional Summary Update:

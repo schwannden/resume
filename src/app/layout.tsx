@@ -1,20 +1,23 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
+import { GoogleAnalytics } from "@next/third-parties/google"
+import { GoogleAnalyticsRouteTracker } from "@/components/analytics/ga"
+import { Suspense } from "react"
 import { Header } from "@/components/layout/header"
 import { ThemeProvider } from "@/components/providers/theme-provider"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Schwannden Kuo - Software Architect, Speaker & Tech Thought Leader",
+  title: "Schwannden Kuo — Software Architect & Speaker",
   description:
-    "Experienced software and system architect, technical speaker, and thought leader with expertise in cloud native technologies, DevOps, and AI/ML. Featured in industry conferences, technical publications, and open source contributions.",
+    "Experienced software and system architect, technical speaker with expertise in cloud native technologies, DevOps, and AI/ML. Featured in industry conferences, technical publications, and open source contributions.",
   keywords: [
     "Software Architect",
     "System Architect",
     "Technical Speaker",
-    "Thought Leader",
+    "AI Architect",
     "Cloud Native",
     "DevOps",
     "Python",
@@ -38,30 +41,28 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Schwannden Kuo" }],
   creator: "Schwannden Kuo",
-  metadataBase: new URL("https://schwannden.github.io"),
+  metadataBase: new URL("https://resume.schwannden.com"),
   openGraph: {
-    title: "Schwannden Kuo - Software Architect, Speaker & Tech Thought Leader",
+    title: "Schwannden Kuo — Software Architect & Speaker",
     description:
       "Experienced software and system architect, technical speaker, and thought leader. Featured in industry conferences, technical publications, and open source contributions. Expert in cloud native technologies, DevOps, and AI/ML.",
-    url: "https://schwannden.github.io/resume",
+    url: "https://resume.schwannden.com",
     siteName: "Schwannden Kuo - Technical Portfolio",
     locale: "en_US",
     type: "profile",
     images: [
       {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Schwannden Kuo - Software Architect & Technical Speaker",
+        url: "https://resume.schwannden.com/preview.png",
+        alt: "Schwannden Kuo — Software Architect & Speaker",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Schwannden Kuo - Software Architect, Speaker & Tech Thought Leader",
+    title: "Schwannden Kuo — Software Architect & Speaker",
     description:
       "Experienced software and system architect, technical speaker, and thought leader. Featured in industry conferences, technical publications, and open source contributions.",
-    images: ["/og-image.jpg"],
+    images: ["https://resume.schwannden.com/preview.png"],
   },
   robots: {
     index: true,
@@ -90,6 +91,15 @@ export default function RootLayout({
             {children}
           </div>
         </ThemeProvider>
+        {process.env.NEXT_PUBLIC_GA_ID &&
+        process.env.NODE_ENV === "production" ? (
+          <>
+            <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+            <Suspense fallback={null}>
+              <GoogleAnalyticsRouteTracker />
+            </Suspense>
+          </>
+        ) : null}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -98,9 +108,8 @@ export default function RootLayout({
               "@type": "Person",
               name: "Schwannden Kuo",
               jobTitle: "Software and System Architect",
-              url: "https://schwannden.github.io/resume",
+              url: "https://resume.schwannden.com",
               email: "schwannden@gmail.com",
-              telephone: "(886) 972006041",
               sameAs: [
                 "https://www.linkedin.com/in/schwannden/",
                 "https://github.com/schwannden",
@@ -178,7 +187,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "WebSite",
               name: "Schwannden Kuo - Technical Portfolio",
-              url: "https://schwannden.github.io/resume",
+              url: "https://resume.schwannden.com",
               description:
                 "Technical portfolio showcasing software architecture expertise, speaking engagements, and thought leadership contributions",
               author: {

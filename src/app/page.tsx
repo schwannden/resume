@@ -17,7 +17,6 @@ export default function HomePage() {
           </h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-sm text-muted-foreground">
             <span>📧 {resumeData.email}</span>
-            <span>📱 {resumeData.phone}</span>
             <span>📍 Taiwan</span>
           </div>
         </section>

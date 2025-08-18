@@ -190,7 +190,6 @@ interface ResumeData {
     name: string
     title: string
     email: string
-    phone?: string
     location: string
     website?: string
     linkedin?: string

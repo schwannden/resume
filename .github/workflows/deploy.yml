@@ -54,7 +54,12 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-
+      
+      - name: Write env
+        run: |
+          cat > .env.production << 'EOF'
+          NEXT_PUBLIC_GA_ID=G-HSZW1ZTDQN
+          EOF
       - name: Build with Next.js
         run: npm run build
 

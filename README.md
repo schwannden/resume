@@ -45,7 +45,6 @@ Edit `src/data/resume.ts` with your information:
 export const resumeData: ResumeData = {
   name: "Your Name",
   email: "your.email@example.com",
-  phone: "Your Phone",
   linkedin: "https://linkedin.com/in/yourprofile",
   title: "Your Professional Title",
   summary: "Your professional summary...",
@@ -73,7 +72,7 @@ npm run build
 
 Update the following in `src/data/resume.ts`:
 
-- **Basic Info**: Name, email, phone, LinkedIn, title, summary
+- **Basic Info**: Name, email, LinkedIn, title, summary
 - **Experience**: Work history with responsibilities
 - **Skills**: Technical skills organized by categories
 - **Projects**: Featured projects with descriptions and links
