@@ -13,6 +13,21 @@ export const metadata: Metadata = {
   title: "Schwannden Kuo — Software Architect & Speaker",
   description:
     "Experienced software and system architect, technical speaker with expertise in cloud native technologies, DevOps, and AI/ML. Featured in industry conferences, technical publications, and open source contributions.",
+  icons: {
+    icon: [
+      {
+        url: "/favicon-16.png",
+        sizes: "16x16",
+        type: "image/png",
+      },
+      {
+        url: "/favicon.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+    ],
+    shortcut: "/favicon.ico",
+  },
   keywords: [
     "Software Architect",
     "System Architect",
