@@ -2,6 +2,10 @@
 
 A sleek, modern resume website built with Next.js 15, React 19, TypeScript, and Tailwind CSS 4 beta. Perfect for creating a professional online presence with comprehensive resume data, speaking engagements, publications, and portfolio showcasing.
 
+## 🔗 Deep Wiki
+
+- [AI Powered Deep Wiki — Resume](https://deepwiki.com/schwannden/resume)
+
 ## ✨ Features
 
 - **📱 Fully Responsive**: Optimized for desktop, tablet, and mobile devices
@@ -163,7 +167,7 @@ npm run prepare
 
 ## 📦 Project Structure
 
-```
+```text
 src/
 ├── app/                    # Next.js App Router
 │   ├── layout.tsx         # Root layout with SEO
