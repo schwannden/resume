@@ -226,12 +226,12 @@ export default function HomePage() {
                 LinkedIn Profile
               </a>
               <a
-                href={externalLinks.medium}
+                href={externalLinks.blog}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-2 border border-input text-foreground rounded-lg hover:bg-accent transition-colors"
               >
-                Medium Articles
+                Blog
               </a>
               <a
                 href={externalLinks.github}

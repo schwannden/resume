@@ -13,7 +13,7 @@ export interface Project {
   description: string
   technologies: string[]
   url?: string
-  type: "github" | "talk" | "contribution" | "medium"
+  type: "github" | "talk" | "contribution" | "blog"
 }
 
 export interface SkillCategory {
@@ -289,72 +289,72 @@ export const resumeData: ResumeData = {
       description: "Rigorous treatment of statistics with proofs.",
       url: "https://drive.google.com/file/d/0B3_JVAzZH1m9YUh0YjRSd0dnZDg/view?usp=drive_link&resourcekey=0-7M792w3TWJIHJul967L_tA",
     },
-    // Blog articles from Medium
+    // Blog articles
     {
       title:
         "Airflow with ArgoCD, kustomize, and Helm. Introducing CI/CD for Our Data Scientist Team",
       type: "blog",
-      venue: "Medium",
+      venue: "Blog",
       views: "5.2K views",
-      url: "https://medium.com/selectfrom/airflow-with-argocd-separating-develop-and-production-environment-with-fully-automated-ci-cd-d8aba7bd0db6",
+      url: "https://blog.schwannden.com/airflow-with-argocd-separating-develop-and-production-environment-with-fully-automated-ci-cd/",
     },
     {
       title: "Deploy Airflow to GKE from ArgoCD on GKE with Workload Identity",
       type: "blog",
-      venue: "Medium",
+      venue: "Blog",
       views: "4.3K views",
-      url: "https://medium.com/devops-dev/deploy-airflow-to-gke-from-argocd-on-gke-with-workload-identity-d51b248895c0",
+      url: "https://blog.schwannden.com/deploy-airflow-to-gke-from-argocd-on-gke-with-workload-identity/",
     },
     {
       title: "Multiple K8s Cluster Management",
       type: "blog",
-      venue: "Medium",
+      venue: "Blog",
       views: "4.3K views",
-      url: "https://medium.com/selectfrom/multiple-k8s-cluster-management-with-rancher-k3s-lightweight-k8s-cluster-for-edge-and-eea1f71175d0",
+      url: "https://blog.schwannden.com/multiple-k8s-cluster-management-with-rancher-k3s-lightweight-k8s-cluster-for-edge-and/",
     },
     {
       title: "Hosting Your Own Helm Chart on GitHub with Chart Releaser",
       type: "blog",
-      venue: "Medium",
+      venue: "Blog",
       views: "2.6K views",
-      url: "https://medium.com/devops-dev/hosting-your-own-helm-chart-on-github-with-chart-releaser-a356ac10ce5c",
+      url: "https://blog.schwannden.com/hosting-your-own-helm-chart-on-github-with-chart-releaser/",
     },
     {
       title: "Switch with a Functional and Generic turn",
       type: "blog",
-      venue: "Medium",
+      venue: "Blog",
       views: "2.3K views",
-      url: "https://medium.com/selectfrom/switch-with-a-functional-and-generic-turn-547e17b0df9",
+      url: "https://blog.schwannden.com/switch-with-a-functional-and-generic-turn/",
     },
     {
       title: "Helm and Kustomization: A Tale of K8s Manifests Management",
       type: "blog",
-      venue: "Medium",
+      venue: "Blog",
       views: "2.3K views",
-      url: "https://medium.com/@schwanndenkuo/helm-and-kustomization-a-tail-of-k8s-manifests-management-c739b7cdf6b7",
+      url: "https://blog.schwannden.com/helm-and-kustomization-a-tail-of-k8s-manifests-management/",
     },
     {
       title:
         "Airflow — Build, Host, Maintain Your Own Dependencies with GitHub and Docker Hub (for Free)",
       type: "blog",
-      venue: "Medium",
+      venue: "Blog",
       views: "1.3K views",
-      url: "https://medium.com/selectfrom/airflow-build-host-maintain-your-own-dependencies-with-github-and-docker-hub-for-free-936c811a5283",
+      url: "https://blog.schwannden.com/airflow-build-host-maintain-your-own-dependencies-with-github-and-docker-hub-for-free/",
     },
     {
       title: "MCP AI Agent在紅什麼 (What's the fuss about MCP AI Agent)",
       type: "blog",
-      venue: "Medium",
+      venue: "Blog",
       views: "1K views",
-      url: "https://medium.com/@schwanndenkuo/mcp-ai-agent在紅什麼-e7fd2523c749",
+      url: "https://blog.schwannden.com/whats-the-fuzz-about-mcp-ai-agent-zh-tw/",
     },
     {
       title:
         "一手抱嬰兒，我用 20分鐘「嘴」出讀經計畫 (With my baby in one hand, I spent 20 minutes speaking a PWA into existence)",
       type: "blog",
-      venue: "Medium",
+      venue: "Blog",
       views: "0.2K views",
-      url: "https://medium.com/@schwanndenkuo/一手抱嬰兒-我用-20分鐘-嘴-出讀經計畫-progressive-web-app-fa693386452b",
+      url: "https://blog.schwannden.com/speak-a-pwa-into-existence/",
     },
   ],
 
@@ -537,7 +537,7 @@ export const resumeData: ResumeData = {
 
 // Additional external links
 export const externalLinks = {
-  medium: "https://medium.com/@schwanndenkuo",
+  blog: "https://blog.schwannden.com",
   github: "https://github.com/schwannden",
   linkedin: "https://www.linkedin.com/in/schwannden/",
 }

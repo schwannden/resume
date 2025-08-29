@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     "Data Science",
     "Speaking Engagements",
     "Technical Publications",
-    "Medium Articles",
+    "Blog",
     "Open Source Contributor",
     "Industry Expert",
     "AI/ML Speaker",
@@ -128,7 +128,7 @@ export default function RootLayout({
               sameAs: [
                 "https://www.linkedin.com/in/schwannden/",
                 "https://github.com/schwannden",
-                "https://medium.com/@schwanndenkuo",
+                "https://blog.schwannden.com",
               ],
               worksFor: {
                 "@type": "Organization",
@@ -173,8 +173,8 @@ export default function RootLayout({
                 {
                   "@type": "Article",
                   name: "Airflow with ArgoCD, kustomize, and Helm",
-                  url: "https://medium.com/selectfrom/airflow-with-argocd-separating-develop-and-production-environment-with-fully-automated-ci-cd-d8aba7bd0db6",
-                  publisher: "Medium",
+                  url: "https://blog.schwannden.com/airflow-with-argocd-separating-develop-and-production-environment-with-fully-automated-ci-cd/",
+                  publisher: "Blog",
                 },
                 {
                   "@type": "SoftwareApplication",

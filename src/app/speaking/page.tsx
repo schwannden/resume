@@ -166,12 +166,12 @@ export default function SpeakingPage() {
                 LinkedIn Profile
               </a>
               <a
-                href="https://medium.com/@schwanndenkuo"
+                href="https://blog.schwannden.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-2 border border-input text-muted-foreground rounded-lg hover:bg-accent transition-colors"
               >
-                Medium Articles
+                Blog
               </a>
             </div>
           </div>
