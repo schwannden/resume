@@ -100,12 +100,24 @@ export const resumeData: ResumeData = {
 
   experience: [
     {
+      title: "Delegate SSO Team Lead",
+      company: "Ubiquiti",
+      duration: "Aug 2025 - Present",
+      responsibilities: [
+        "Pioneered an AI-driven incident response system that automated ticket analysis to reduce reaction time by over 30%, while simultaneously accelerating engineering onboarding from 3 months to 1 month through automated context and real-time insights.",
+        "Architected and deployed a high-velocity Suspicious Behavior Detection module with zero downtime, establishing a scalable framework for identifying anomalous user patterns and enhancing platform security.",
+        "Led cross-functional integration for \"Bring Your Own IdP\", collaborating with product teams to resolve complex authentication and authorization flows and expand enterprise identity capabilities.",
+      ],
+    },
+    {
       title: "Cloud Software Engineer",
       company: "Ubiquiti",
-      duration: "Aug 2024 - Present",
+      duration: "Aug 2024 - Aug 2025",
       responsibilities: [
-        "Implemented and operated high-scale Single Sign-On service (millions of users, 1K–10K RPS workload) on AWS, ensuring secure identity management across global products.",
-        "Collaborated with product teams to map security & SSO capabilities into direct business value, enabling faster customer onboarding and reducing account-related support costs.",
+        "Velocity: Reduced feature lead time by 30% and accelerated security patching by 5x by revamping release lifecycles and automating consistency checks.",
+        "Resilience: Engineered high-availability DB architecture with strict R/W separation, eliminating production impact during RDS replica spikes.",
+        "Efficiency: Boosted engineering and support velocity by integrating AI-driven workflows to standardize documentation and speed up case resolution.",
+        "Operated a high-scale AWS SSO service (millions of users, 10K RPS) that aligned security architecture with business goals, accelerating customer onboarding and reducing support costs.",
       ],
     },
     {
@@ -123,9 +135,9 @@ export const resumeData: ResumeData = {
       company: "MoBagel",
       duration: "Sep 2021 - Dec 2022",
       responsibilities: [
-        "Architected the new AI-driven advertising platform (8ndpoint.com), integrating generative personalization features to increase campaign engagement.",
-        "Led migration of core services to hybrid-cloud environments (GCP: GKE, Cloud SQL, BigQuery, EC2, S3, VPC, Hosted: MinIO, Longhorn, Rancher, Orchestration: ArgoCD, Airflow), designing scalable IAM and network structures.",
-        "Partnered closely with product managers to translate AI/ML features into customer-facing benefits, improving campaign ROI for enterprise clients.",
+        "Architected the AI-driven advertising platform (8ndpoint.com), integrating generative personalization to drive campaign engagement. This technical success was instrumental in securing a strategic M&A acquisition, establishing the platform as the company's new core profit center.",
+        "Led the migration of core services to a hybrid-cloud environment, designing scalable IAM and network structures across GCP (GKE, Cloud SQL, BigQuery) and AWS (EC2, S3, VPC) utilizing orchestration tools like ArgoCD and Airflow.",
+        "Partnered with product leadership to translate complex AI/ML capabilities into customer-facing benefits, effectively bridging the gap between R&D innovation and enterprise campaign ROI.",
       ],
     },
     {
@@ -133,9 +145,10 @@ export const resumeData: ResumeData = {
       company: "MoBagel",
       duration: "Jun 2018 - Sep 2021",
       responsibilities: [
-        "Lead an algorithm/architecture team, and a web team of size 8~11 to build products. Innovate and productize world class AutoML and Auto Time Series products.",
-        "Build QA, DevOps Team, Web, and ML team. Design the entire software development and release process during various company stages.",
-        "Setup OKR, company tech roadmap, HRD plan, recruiting plan. Tirelessly align company objectives and employees personal growth to cultivate a positive working environment.",
+        "Secured Series A funding by architecting and launching Asia's first Auto Time Series product, which enabled major retail enterprises to optimize supply chain inventory through high-accuracy forecasting.",
+        "Pivotal in closing Pre-A funding and winning key international medical device accounts by re-engineering the general AutoML engine to improve runtime efficiency by ~3,000%, delivering substantial ROI via enhanced precision, recall, and stability.",
+        "Scaled the engineering organization by building QA, DevOps, Web, and Algorithm teams from the ground up. Established company-wide OKRs, technical roadmaps, and recruiting strategies, aligning individual employee growth with business objectives.",
+        "Accelerated feature rollout speed by 4x through a product restructuring that enabled an \"inner-source\" culture, allowing cross-functional teams to contribute directly to the core product codebase and distributed system architecture.",
       ],
     },
     {
