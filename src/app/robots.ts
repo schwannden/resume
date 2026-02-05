@@ -1,9 +1,10 @@
 import { MetadataRoute } from "next"
+import { siteConfig } from "../../resume.config"
 
 export const dynamic = "force-static"
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = "https://resume.schwannden.com"
+  const baseUrl = siteConfig.url
 
   return {
     rules: {

@@ -1,7 +1,26 @@
+import { Metadata } from "next"
 import { resumeData, externalLinks } from "@/data/resume"
 import { Badge } from "@/components/ui/badge"
 import { SpeakingHighlights } from "@/components/sections/speaking-highlights"
 import { ContributionList } from "@/components/sections/contribution-list"
+import { siteConfig } from "../../resume.config"
+
+export const metadata: Metadata = {
+  title: `${siteConfig.name} - ${siteConfig.title}`,
+  description: siteConfig.description,
+  keywords: siteConfig.seo.keywords,
+  openGraph: {
+    title: `${siteConfig.name} - ${siteConfig.title}`,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    type: "profile",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${siteConfig.name} - ${siteConfig.title}`,
+    description: siteConfig.shortDescription,
+  },
+}
 
 export default function HomePage() {
   return (
@@ -17,7 +36,7 @@ export default function HomePage() {
           </h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-sm text-muted-foreground">
             <span>📧 {resumeData.email}</span>
-            <span>📍 Taiwan</span>
+            <span>📍 {siteConfig.location}</span>
           </div>
         </section>
 

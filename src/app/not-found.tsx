@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { siteConfig } from "../../resume.config"
 
 export default function NotFound() {
   return (
@@ -25,14 +26,14 @@ export default function NotFound() {
 
           <div className="flex justify-center space-x-4 text-sm text-gray-500">
             <Link
-              href="mailto:john.doe@email.com"
+              href={`mailto:${siteConfig.social.email}`}
               className="hover:text-gray-700 transition-colors"
             >
               Contact Me
             </Link>
             <span>•</span>
             <Link
-              href="https://linkedin.com/in/johndoe"
+              href={siteConfig.social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-gray-700 transition-colors"
@@ -41,7 +42,7 @@ export default function NotFound() {
             </Link>
             <span>•</span>
             <Link
-              href="https://github.com/johndoe"
+              href={siteConfig.social.github}
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-gray-700 transition-colors"

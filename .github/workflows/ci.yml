@@ -1,0 +1,126 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+# Quality checks need read, deploy needs write
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Deployment concurrency control
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+jobs:
+  # Quality checks run in parallel via matrix
+  quality:
+    name: Quality - ${{ matrix.check }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        check: [eslint, prettier, type-check]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Restore ESLint cache
+        if: matrix.check == 'eslint'
+        uses: actions/cache@v5
+        with:
+          path: .next/cache/eslint
+          key: ${{ runner.os }}-eslint-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.{ts,tsx,js,jsx}') }}
+          restore-keys: |
+            ${{ runner.os }}-eslint-${{ hashFiles('**/package-lock.json') }}-
+            ${{ runner.os }}-eslint-
+
+      - name: Run ESLint
+        if: matrix.check == 'eslint'
+        run: npm run lint
+
+      - name: Run Prettier Check
+        if: matrix.check == 'prettier'
+        run: npm run format:check
+
+      - name: Run Type Check
+        if: matrix.check == 'type-check'
+        run: npm run type-check
+
+  # Build job runs in parallel with quality
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+        with:
+          static_site_generator: next
+
+      - name: Restore Next.js cache
+        uses: actions/cache@v5
+        with:
+          path: .next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.{ts,tsx,js,jsx}') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Write production env
+        run: |
+          cat > .env.production << 'EOF'
+          NEXT_PUBLIC_GA_ID=G-HSZW1ZTDQN
+          EOF
+
+      - name: Build with Next.js
+        run: npm run build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./out
+
+  # Deploy job runs only after quality + build pass
+  deploy:
+    name: Deploy to GitHub Pages
+    # Only deploy on push to main, not on PRs
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: [quality, build]
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    # Separate concurrency group for deployment
+    concurrency:
+      group: "pages"
+      cancel-in-progress: false
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

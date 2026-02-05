@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils"
 import { MobileNav } from "./mobile-nav"
 import { AccessibilityConfig } from "@/components/ui/accessibility-config"
 import { Github } from "lucide-react"
+import { siteConfig } from "../../../resume.config"
 
 const navigationLinks = [
   {
@@ -30,7 +31,7 @@ export function Header() {
       <div className="container mx-auto flex h-14 items-center justify-between px-4">
         <div className="mr-4 flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <span className="font-bold text-xl">Schwannden Kuo</span>
+            <span className="font-bold text-xl">{siteConfig.name}</span>
           </Link>
         </div>
 
@@ -52,7 +53,7 @@ export function Header() {
           ))}
           <AccessibilityConfig />
           <a
-            href="https://github.com/schwannden/resume"
+            href={siteConfig.social.github}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub repository"
@@ -66,7 +67,7 @@ export function Header() {
         <div className="flex items-center space-x-2 md:hidden">
           <AccessibilityConfig />
           <a
-            href="https://github.com/schwannden/resume"
+            href={siteConfig.social.github}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub repository"

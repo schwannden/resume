@@ -6,13 +6,13 @@ import { GoogleAnalyticsRouteTracker } from "@/components/analytics/ga"
 import { Suspense } from "react"
 import { Header } from "@/components/layout/header"
 import { ThemeProvider } from "@/components/providers/theme-provider"
+import { siteConfig } from "../../resume.config"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Schwannden Kuo — Software Architect & Speaker",
-  description:
-    "Experienced software and system architect, technical speaker with expertise in cloud native technologies, DevOps, and AI/ML. Featured in industry conferences, technical publications, and open source contributions.",
+  title: `${siteConfig.name} — ${siteConfig.title}`,
+  description: siteConfig.description,
   icons: {
     icon: [
       {
@@ -28,68 +28,31 @@ export const metadata: Metadata = {
     ],
     shortcut: "/favicon.ico",
   },
-  keywords: [
-    "Software Architect",
-    "System Architect",
-    "Technical Speaker",
-    "AI Architect",
-    "Cloud Native",
-    "DevOps",
-    "Python",
-    "Scala",
-    "TypeScript",
-    "Kubernetes",
-    "GCP",
-    "AWS",
-    "Machine Learning",
-    "AutoML",
-    "Data Science",
-    "Speaking Engagements",
-    "Technical Publications",
-    "Blog",
-    "Open Source Contributor",
-    "Industry Expert",
-    "AI/ML Speaker",
-    "DevOps Evangelist",
-    "Resume",
-    "Portfolio",
-  ],
-  authors: [{ name: "Schwannden Kuo" }],
-  creator: "Schwannden Kuo",
-  metadataBase: new URL("https://resume.schwannden.com"),
+  keywords: siteConfig.seo.keywords,
+  authors: [{ name: siteConfig.seo.author }],
+  creator: siteConfig.seo.author,
+  metadataBase: new URL(siteConfig.url),
   openGraph: {
-    title: "Schwannden Kuo — Software Architect & Speaker",
-    description:
-      "Experienced software and system architect, technical speaker, and thought leader. Featured in industry conferences, technical publications, and open source contributions. Expert in cloud native technologies, DevOps, and AI/ML.",
-    url: "https://resume.schwannden.com",
-    siteName: "Schwannden Kuo - Technical Portfolio",
+    title: `${siteConfig.name} — ${siteConfig.title}`,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    siteName: `${siteConfig.name} - Technical Portfolio`,
     locale: "en_US",
     type: "profile",
     images: [
       {
-        url: "https://resume.schwannden.com/preview.png",
-        alt: "Schwannden Kuo — Software Architect & Speaker",
+        url: `${siteConfig.url}${siteConfig.seo.ogImage}`,
+        alt: `${siteConfig.name} — ${siteConfig.title}`,
       },
     ],
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Schwannden Kuo — Software Architect & Speaker",
-    description:
-      "Experienced software and system architect, technical speaker, and thought leader. Featured in industry conferences, technical publications, and open source contributions.",
-    images: ["https://resume.schwannden.com/preview.png"],
+    card: siteConfig.seo.twitterCard as "summary_large_image",
+    title: `${siteConfig.name} — ${siteConfig.title}`,
+    description: siteConfig.shortDescription,
+    images: [`${siteConfig.url}${siteConfig.seo.ogImage}`],
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+  robots: siteConfig.seo.robots,
 }
 
 export default function RootLayout({
@@ -106,10 +69,11 @@ export default function RootLayout({
             {children}
           </div>
         </ThemeProvider>
-        {process.env.NEXT_PUBLIC_GA_ID &&
-        process.env.NODE_ENV === "production" ? (
+        {siteConfig.analytics.googleAnalyticsId &&
+        (process.env.NODE_ENV === "production" ||
+          siteConfig.analytics.enableInDev) ? (
           <>
-            <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+            <GoogleAnalytics gaId={siteConfig.analytics.googleAnalyticsId} />
             <Suspense fallback={null}>
               <GoogleAnalyticsRouteTracker />
             </Suspense>
@@ -121,46 +85,24 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              name: "Schwannden Kuo",
-              jobTitle: "Software and System Architect",
-              url: "https://resume.schwannden.com",
-              email: "schwannden@gmail.com",
+              name: siteConfig.name,
+              jobTitle: siteConfig.structuredData.jobTitle,
+              url: siteConfig.url,
+              email: siteConfig.social.email,
               sameAs: [
-                "https://www.linkedin.com/in/schwannden/",
-                "https://github.com/schwannden",
-                "https://blog.schwannden.com",
-              ],
+                siteConfig.social.linkedin,
+                siteConfig.social.github,
+                siteConfig.social.blog,
+              ].filter(Boolean),
               worksFor: {
                 "@type": "Organization",
-                name: "Dell",
+                name: siteConfig.structuredData.currentOrganization,
               },
               alumniOf: {
                 "@type": "Organization",
-                name: "National Chiao Tung University",
+                name: siteConfig.structuredData.alumniOrganization,
               },
-              knowsAbout: [
-                "Software Architecture",
-                "System Architecture",
-                "Cloud Native",
-                "DevOps",
-                "Python",
-                "Scala",
-                "TypeScript",
-                "Kubernetes",
-                "GCP",
-                "AWS",
-                "Machine Learning",
-                "Data Science",
-                "AutoML",
-                "Apache Spark",
-                "Docker",
-                "CI/CD",
-                "Technical Speaking",
-                "Thought Leadership",
-                "Open Source Development",
-                "Technical Writing",
-                "Industry Evangelism",
-              ],
+              knowsAbout: siteConfig.structuredData.expertise,
               // Speaking engagements and publications
               hasOccupation: {
                 "@type": "Occupation",
@@ -169,28 +111,14 @@ export default function RootLayout({
                   "Delivers technical presentations on cloud native technologies, AI/ML, and DevOps to industry conferences and corporate audiences",
               },
               // Notable works and contributions
-              creator: [
-                {
-                  "@type": "Article",
-                  name: "Airflow with ArgoCD, kustomize, and Helm",
-                  url: "https://blog.schwannden.com/airflow-with-argocd-separating-develop-and-production-environment-with-fully-automated-ci-cd/",
-                  publisher: "Blog",
-                },
-                {
-                  "@type": "SoftwareApplication",
-                  name: "MetaOmics",
-                  url: "https://github.com/metaOmics/metaOmics",
-                  description:
-                    "Analysis pipeline and browser-based software suite for transcriptomic meta-analysis",
-                },
-                {
-                  "@type": "Event",
-                  name: "End-to-End AutoML in Practice",
-                  location: "机器之心 (Jiqizhixin) × MoBagel",
-                  description:
-                    "Technical workshop on AutoML pipeline design and real-world deployments",
-                },
-              ],
+              creator: siteConfig.structuredData.featuredWorks.map((work) => ({
+                "@type": work.type,
+                name: work.name,
+                url: work.url,
+                ...(work.description && { description: work.description }),
+                ...(work.publisher && { publisher: work.publisher }),
+                ...(work.location && { location: work.location }),
+              })),
             }),
           }}
         />
@@ -201,19 +129,17 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              name: "Schwannden Kuo - Technical Portfolio",
-              url: "https://resume.schwannden.com",
-              description:
-                "Technical portfolio showcasing software architecture expertise, speaking engagements, and thought leadership contributions",
+              name: `${siteConfig.name} - Technical Portfolio`,
+              url: siteConfig.url,
+              description: siteConfig.description,
               author: {
                 "@type": "Person",
-                name: "Schwannden Kuo",
+                name: siteConfig.name,
               },
               mainEntity: {
                 "@type": "Person",
-                name: "Schwannden Kuo",
-                description:
-                  "Software Architect, Technical Speaker, and Thought Leader",
+                name: siteConfig.name,
+                description: siteConfig.shortDescription,
               },
             }),
           }}

@@ -10,11 +10,11 @@ const nextConfig = {
 
   // Note: Turbopack is enabled by default in Next.js 16
 
-  // Base path configuration for GitHub Pages (uncomment when deploying to GitHub Pages)
-  // basePath: '/resume',
+  // Base path configuration (configure in resume.config.ts or use environment variables)
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH || "",
 
-  // Asset prefix for GitHub Pages (uncomment when deploying to GitHub Pages)
-  // assetPrefix: '/resume/',
+  // Asset prefix (configure in resume.config.ts or use environment variables)
+  assetPrefix: process.env.NEXT_PUBLIC_ASSET_PREFIX || "",
 
   // Trailing slash for static export
   trailingSlash: true,
