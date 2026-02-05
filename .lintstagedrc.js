@@ -1,17 +1,17 @@
 module.exports = {
   // Type check TypeScript files
-  "**/*.(ts|tsx)": () => "npx tsc --noEmit",
+  "**/*.{ts,tsx}": () => "npm run type-check",
 
-  // Lint & Prettify TS and JS files
-  "**/*.(ts|tsx|js)": (filenames) => [
-    `npx eslint --fix ${filenames.join(" ")}`,
+  // Lint & format TS and JS files with caching
+  "**/*.{ts,tsx,js,jsx}": (filenames) => [
+    `npx eslint --fix --cache --cache-location .next/cache/eslint/ ${filenames.join(" ")}`,
     `npx prettier --write ${filenames.join(" ")}`,
   ],
 
-  // Prettify only Markdown and JSON files
-  "**/*.(md|json)": (filenames) =>
+  // Format only Markdown and JSON files
+  "**/*.{md,json}": (filenames) =>
     `npx prettier --write ${filenames.join(" ")}`,
 
-  // Prettify CSS files
-  "**/*.(css)": (filenames) => `npx prettier --write ${filenames.join(" ")}`,
+  // Format CSS files
+  "**/*.css": (filenames) => `npx prettier --write ${filenames.join(" ")}`,
 }

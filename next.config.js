@@ -8,7 +8,7 @@ const nextConfig = {
     unoptimized: true,
   },
 
-  // Note: Turbopack is enabled automatically in Next.js 15 with --turbo flag
+  // Note: Turbopack is enabled by default in Next.js 16
 
   // Base path configuration for GitHub Pages (uncomment when deploying to GitHub Pages)
   // basePath: '/resume',

@@ -1,6 +1,6 @@
 # Modern Resume Website Template
 
-A sleek, modern resume website built with Next.js 15, React 19, TypeScript, and Tailwind CSS 4 beta. Perfect for creating a professional online presence with comprehensive resume data, speaking engagements, publications, and portfolio showcasing.
+A sleek, modern resume website built with Next.js 16, React 19.2, TypeScript, and Tailwind CSS 4 beta. Perfect for creating a professional online presence with comprehensive resume data, speaking engagements, publications, and portfolio showcasing.
 
 ## 🔗 Deep Wiki
 
@@ -9,7 +9,7 @@ A sleek, modern resume website built with Next.js 15, React 19, TypeScript, and 
 ## ✨ Features
 
 - **📱 Fully Responsive**: Optimized for desktop, tablet, and mobile devices
-- **⚡ Lightning Fast**: Built with Next.js 15 and Turbopack for optimal performance
+- **⚡ Lightning Fast**: Built with Next.js 16 and Turbopack for optimal performance
 - **🎨 Modern Design**: Clean, professional design optimized for readability and ATS compatibility
 - **📊 Data-Driven**: Centralized content management with TypeScript interfaces
 - **🔍 SEO Optimized**: Comprehensive meta tags, Open Graph, Twitter Cards, and JSON-LD structured data
@@ -19,10 +19,10 @@ A sleek, modern resume website built with Next.js 15, React 19, TypeScript, and 
 
 ## 🛠️ Tech Stack
 
-- **Framework**: Next.js 15 with App Router
-- **Frontend**: React 19, TypeScript
+- **Framework**: Next.js 16 with App Router
+- **Frontend**: React 19.2, TypeScript
 - **Styling**: Tailwind CSS 4 beta, shadcn/ui components
-- **Build Tool**: Turbopack (Next.js 15 fast refresh)
+- **Build Tool**: Turbopack (Next.js 16 fast refresh)
 - **Deployment**: GitHub Pages with GitHub Actions
 - **Code Quality**: ESLint, Prettier, Husky + lint-staged
 

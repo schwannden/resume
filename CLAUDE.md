@@ -4,12 +4,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-A modern, responsive resume website built with Next.js 15, React 19, TypeScript, and Tailwind CSS 4 beta. The site is optimized for static generation and deployed to GitHub Pages. Features include comprehensive resume data, speaking engagements, publications, and professional portfolio showcasing.
+A modern, responsive resume website built with Next.js 16, React 19.2, TypeScript, and Tailwind CSS 4 beta. The site is optimized for static generation and deployed to GitHub Pages. Features include comprehensive resume data, speaking engagements, publications, and professional portfolio showcasing.
 
 ## Development Commands
 
 ```bash
-# Start development server with Turbopack (Next.js 15 fast refresh)
+# Start development server with Turbopack (enabled by default in Next.js 16)
 npm run dev
 
 # Build for production (static export for GitHub Pages)
@@ -70,9 +70,12 @@ npm run prepare
 
 ### Linting & Formatting
 
-- **ESLint**: Configured with Next.js, TypeScript, and Prettier integration
-- **Prettier**: Configured for consistent code formatting (no semicolons, trailing commas ES5)
-- **Husky + lint-staged**: Pre-commit hooks for code quality enforcement
+- **ESLint**: Configured with ESLint 9 flat config format (`eslint.config.mjs`)
+- **Next.js**: Using @next/eslint-plugin-next for Next.js-specific rules and core-web-vitals
+- **TypeScript**: Type-aware linting with typescript-eslint v8 and projectService
+- **React**: React 19 support with Hooks rules, accessibility (jsx-a11y), and best practices
+- **Prettier**: Configured for consistent code formatting, integrated with ESLint via eslint-config-prettier
+- **Husky + lint-staged**: Pre-commit hooks with ESLint caching for code quality enforcement
 
 ### Tailwind Configuration
 
@@ -82,7 +85,7 @@ npm run prepare
 
 ### Next.js Specific
 
-- **Turbopack**: Enabled with `--turbo` flag for faster development builds
+- **Turbopack**: Enabled by default in Next.js 16 for faster development builds (2-5x faster builds, 10x faster Fast Refresh)
 - **Static Export**: All pages pre-rendered at build time for GitHub Pages compatibility
 - **SEO Optimization**: Comprehensive meta tags, Open Graph, Twitter Cards, and JSON-LD structured data
 

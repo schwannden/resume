@@ -106,7 +106,7 @@ export const resumeData: ResumeData = {
       responsibilities: [
         "Pioneered an AI-driven incident response system that automated ticket analysis to reduce reaction time by over 30%, while simultaneously accelerating engineering onboarding from 3 months to 1 month through automated context and real-time insights.",
         "Architected and deployed a high-velocity Suspicious Behavior Detection module with zero downtime, establishing a scalable framework for identifying anomalous user patterns and enhancing platform security.",
-        "Led cross-functional integration for \"Bring Your Own IdP\", collaborating with product teams to resolve complex authentication and authorization flows and expand enterprise identity capabilities.",
+        'Led cross-functional integration for "Bring Your Own IdP", collaborating with product teams to resolve complex authentication and authorization flows and expand enterprise identity capabilities.',
       ],
     },
     {
@@ -148,7 +148,7 @@ export const resumeData: ResumeData = {
         "Secured Series A funding by architecting and launching Asia's first Auto Time Series product, which enabled major retail enterprises to optimize supply chain inventory through high-accuracy forecasting.",
         "Pivotal in closing Pre-A funding and winning key international medical device accounts by re-engineering the general AutoML engine to improve runtime efficiency by ~3,000%, delivering substantial ROI via enhanced precision, recall, and stability.",
         "Scaled the engineering organization by building QA, DevOps, Web, and Algorithm teams from the ground up. Established company-wide OKRs, technical roadmaps, and recruiting strategies, aligning individual employee growth with business objectives.",
-        "Accelerated feature rollout speed by 4x through a product restructuring that enabled an \"inner-source\" culture, allowing cross-functional teams to contribute directly to the core product codebase and distributed system architecture.",
+        'Accelerated feature rollout speed by 4x through a product restructuring that enabled an "inner-source" culture, allowing cross-functional teams to contribute directly to the core product codebase and distributed system architecture.',
       ],
     },
     {

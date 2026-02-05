@@ -35,7 +35,7 @@ export const fontSizeConfigs: FontSizeConfig[] = [
 
 export function getFontSizeConfig(fontSize: FontSize): FontSizeConfig {
   return (
-    fontSizeConfigs.find((config) => config.name === fontSize) ||
+    fontSizeConfigs.find((config) => config.name === fontSize) ??
     fontSizeConfigs[0]
   )
 }

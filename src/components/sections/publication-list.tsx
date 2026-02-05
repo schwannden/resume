@@ -143,7 +143,7 @@ export function PublicationList({ mode = "highlight" }: PublicationListProps) {
                         )}
                         {pub.views && (
                           <>
-                            {(pub.venue || pub.date) && <span>•</span>}
+                            {(pub.venue ?? pub.date) && <span>•</span>}
                             <span className="flex items-center gap-1">
                               <Eye className="w-3 h-3" />
                               {pub.views}
