@@ -466,6 +466,18 @@ export const resumeData: ResumeData = {
       ],
     },
     {
+      name: "AI Agent Study",
+      type: "community",
+      url: "https://schwannden.github.io/ai-agent-study/",
+      description:
+        "Educational documentation site for building autonomous AI agents using Claude",
+      features: [
+        "Progressive learning paths from beginner to production-ready",
+        "Complete runnable code examples",
+        "Covers ReAct patterns and Plan-Execute-Verify architectures",
+      ],
+    },
+    {
       name: "NDN on Galileo",
       type: "community",
       url: "https://github.com/schwannden/ndn-on-galileo",
