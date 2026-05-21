@@ -16,18 +16,19 @@ export const siteConfig = {
   // Basic Information
   // These values are used across the site for SEO and display
   name: "Schwannden Kuo",
-  title: "Software Architect & Speaker",
-  tagline: "Building scalable systems and sharing knowledge",
+  title: "Tech Lead, Identity & Applied AI",
+  tagline:
+    "Builds AI agents that learn from every incident, and identity platforms that don't",
 
   // Location (displayed on resume)
   location: "Taiwan",
 
   // Bio for SEO and social sharing
   description:
-    "Experienced software and system architect, technical speaker with expertise in cloud native technologies, DevOps, and AI/ML. Featured in industry conferences, technical publications, and open source contributions.",
+    "Tech lead at the intersection of identity platforms and applied AI. Builds production agentic systems at Ubiquiti; previously Director of ML at MoBagel. Author of technical publications and open source contributions.",
 
   // Short bio (used in some social cards)
-  shortDescription: "Software Architect, Technical Speaker, and Thought Leader",
+  shortDescription: "Tech lead — identity platforms and applied AI",
 
   // ============================================================================
   // URLs & Social Links
@@ -173,13 +174,13 @@ export const siteConfig = {
 
   structuredData: {
     // Current organization
-    currentOrganization: "Dell",
+    currentOrganization: "Ubiquiti",
 
     // Alumni organization
     alumniOrganization: "National Chiao Tung University",
 
     // Job title for structured data
-    jobTitle: "Software and System Architect",
+    jobTitle: "Tech Lead, Identity & Applied AI",
 
     // Areas of expertise
     expertise: [
@@ -222,11 +223,10 @@ export const siteConfig = {
           "Analysis pipeline and browser-based software suite for transcriptomic meta-analysis",
       },
       {
-        type: "Event",
-        name: "End-to-End AutoML in Practice",
-        location: "机器之心 (Jiqizhixin) × MoBagel",
-        description:
-          "Technical workshop on AutoML pipeline design and real-world deployments",
+        type: "Article",
+        name: "AI Paradigm Shift, Ep. 2 — The Triage Agent That Learned From Every Incident",
+        url: "https://blog.schwannden.com/ai-paradigm-shift-ep-2-the-triage-agent-that-learned-from-every-incident/",
+        publisher: "Blog",
       },
     ],
   },

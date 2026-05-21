@@ -94,19 +94,19 @@ export const resumeData: ResumeData = {
   name: "Schwannden Kuo",
   email: "schwannden@gmail.com",
   linkedin: "https://www.linkedin.com/in/schwannden/",
-  title: "Software and System Architect",
+  title: "Tech Lead, Identity & Applied AI",
   summary:
-    "Experienced software and system architect, with a demonstrated history of working in the data product industry and DevOps. Skilled in Python, Scala, and TypeScript. Held diverse roles from software engineers, data scientist, DevOps, to director. Loves cloud and open source. Excels in creatively solving complex issues and bridging R&D and business for product excellence.",
+    "Tech lead with a decade across data products, identity platforms, and applied AI. Currently leading SSO subsystem at Ubiquiti serving millions of active users under high-throughput production load, and built the team's portfolio of production AI agents — multi-agent triage, release monitoring, code review — that learn from each use. Previously Director of ML at MoBagel, where I won the enterprise accounts (Chunghwa Telecom, Wistron, AUO) that anchored Series A revenue and re-architected the AutoML engine for ~30× runtime efficiency. Author, speaker, open-source contributor.",
 
   experience: [
     {
-      title: "Delegate SSO Team Lead",
+      title: "SSO Team Lead",
       company: "Ubiquiti",
       duration: "Aug 2025 - Present",
       responsibilities: [
-        "Pioneered an AI-driven incident response system that automated ticket analysis to reduce reaction time by over 30%, while simultaneously accelerating engineering onboarding from 3 months to 1 month through automated context and real-time insights.",
-        "Architected and deployed a high-velocity Suspicious Behavior Detection module with zero downtime, establishing a scalable framework for identifying anomalous user patterns and enhancing platform security.",
-        'Led cross-functional integration for "Bring Your Own IdP", collaborating with product teams to resolve complex authentication and authorization flows and expand enterprise identity capabilities.',
+        "Built and shipped a portfolio of production AI agents for the SSO team — multi-agent release monitor, read-only incident-triage agent spanning CloudWatch, RDS Performance Insights, Athena, ALB/WAF, and CloudTrail, plus team-shared skills for code review, dependency review, and support triage. Triage agent cut median alert-to-root-cause from 70 → 18 minutes across 5 production incidents; by the fifth, a teammate ran incidents solo. Documented in a 3-part public blog series.",
+        "Drove a multi-quarter API latency epic to completion — identified SES suppression-list lookups as the root cause and shipped a Redis-cached fail-safe. P95 reduced 90–97% across 6 critical auth/MFA endpoints (e.g., login 11.27s → 0.79s; email MFA 10.18s → 0.31s; password reset 9.27s → 0.54s).",
+        "Owned cross-team architectural delivery on the SSO platform — drove Bring-Your-Own-IdP (SAML/OIDC for Entra, Okta, Google Workspace) from zero prior protocol experience, with the Entra one-click flow now live; brokered cross-team contracts across SRE, IdP Cloud, MSP Mgmt, Account FE, on-premise devices, and Mobile FE for multi-site tenant provisioning, JWT key rotation, and unified API error response standardization.",
       ],
     },
     {
@@ -114,16 +114,16 @@ export const resumeData: ResumeData = {
       company: "Ubiquiti",
       duration: "Aug 2024 - Aug 2025",
       responsibilities: [
-        "Velocity: Reduced feature lead time by 30% and accelerated security patching by 5x by revamping release lifecycles and automating consistency checks.",
-        "Resilience: Engineered high-availability DB architecture with strict R/W separation, eliminating production impact during RDS replica spikes.",
-        "Efficiency: Boosted engineering and support velocity by integrating AI-driven workflows to standardize documentation and speed up case resolution.",
-        "Operated a high-scale AWS SSO service (millions of users, 10K RPS) that aligned security architecture with business goals, accelerating customer onboarding and reducing support costs.",
+        "Velocity: reduced feature lead time ~30% and accelerated security patching ~5× by revamping the release lifecycle and automating consistency checks.",
+        "Resilience: diagnosed a 30-minute production login p95 spike (5.19s vs 1.5s baseline) as a Postgres row lock held across PBKDF2/Argon2 hashing; 15-LOC fix achieved a 697× improvement in mean exec time on hot-row updates.",
+        "Resilience (DB): engineered high-availability database architecture with strict read/write separation, eliminating production impact during RDS replica events.",
+        "Operated AWS SSO at millions of active users under high-throughput production load, aligning security architecture with business outcomes and reducing support cost.",
       ],
     },
     {
       title: "Senior Software Engineer",
       company: "Dell",
-      duration: "Jan 2023 - Ayg 2024",
+      duration: "Jan 2023 - Aug 2024",
       responsibilities: [
         "Modernized a legacy integration test platform into a cloud-native architecture (AWS & Kubernetes), reducing operational costs by 50% and accelerating product build time by 400%, directly improving time-to-market.",
         "Advocated for developer-first practices by gathering feedback from engineering teams and influencing CI/CD adoption (GitHub Actions, Argo, Kustomize, Helm).",
@@ -135,7 +135,7 @@ export const resumeData: ResumeData = {
       company: "MoBagel",
       duration: "Sep 2021 - Dec 2022",
       responsibilities: [
-        "Architected the AI-driven advertising platform (8ndpoint.com), integrating generative personalization to drive campaign engagement. This technical success was instrumental in securing a strategic M&A acquisition, establishing the platform as the company's new core profit center.",
+        "Architected 8ndpoint.com, the AI-driven advertising platform whose technical assets and customer traction anchored MoBagel's strategic M&A acquisition; integrated generative personalization for campaign engagement.",
         "Led the migration of core services to a hybrid-cloud environment, designing scalable IAM and network structures across GCP (GKE, Cloud SQL, BigQuery) and AWS (EC2, S3, VPC) utilizing orchestration tools like ArgoCD and Airflow.",
         "Partnered with product leadership to translate complex AI/ML capabilities into customer-facing benefits, effectively bridging the gap between R&D innovation and enterprise campaign ROI.",
       ],
@@ -145,10 +145,9 @@ export const resumeData: ResumeData = {
       company: "MoBagel",
       duration: "Jun 2018 - Sep 2021",
       responsibilities: [
-        "Secured Series A funding by architecting and launching Asia's first Auto Time Series product, which enabled major retail enterprises to optimize supply chain inventory through high-accuracy forecasting.",
-        "Pivotal in closing Pre-A funding and winning key international medical device accounts by re-engineering the general AutoML engine to improve runtime efficiency by ~3,000%, delivering substantial ROI via enhanced precision, recall, and stability.",
-        "Scaled the engineering organization by building QA, DevOps, Web, and Algorithm teams from the ground up. Established company-wide OKRs, technical roadmaps, and recruiting strategies, aligning individual employee growth with business objectives.",
-        'Accelerated feature rollout speed by 4x through a product restructuring that enabled an "inner-source" culture, allowing cross-functional teams to contribute directly to the core product codebase and distributed system architecture.',
+        "Won three Taiwan enterprise accounts that anchored Series A revenue thesis — Chunghwa Telecom, Wistron, and AUO; two became strategic investors. Each engagement combined direct customer ownership with the technical solution: re-architected the general AutoML engine (Scala / Hadoop) for memory and compute efficiency to ship to Chunghwa Telecom — ~30× runtime improvement; designed bespoke algorithmic solutions for Wistron and AUO industrial problems with measured ROI per engagement.",
+        "Built the engineering organization from the ground up as hiring manager — interviewed and onboarded engineers across QA, DevOps, Web, and Algorithm functions; coached the Frontend Lead and Algorithm Team Lead through their first 12 months; transitioned the QA function to a hired QA Lead.",
+        'Restructured the product to enable an "inner-source" culture across teams, accelerating feature rollout ~4×.',
       ],
     },
     {
@@ -183,8 +182,8 @@ export const resumeData: ResumeData = {
     {
       category: "Cloud & DevOps",
       skills: [
-        "GCP",
         "AWS",
+        "GCP",
         "Kubernetes",
         "Docker",
         "ArgoCD",
@@ -192,6 +191,9 @@ export const resumeData: ResumeData = {
         "Kustomize",
         "MinIO",
         "Github Actions",
+        "CloudWatch / EMF",
+        "Athena",
+        "RDS / Aurora",
       ],
       variant: "info",
     },
@@ -214,6 +216,10 @@ export const resumeData: ResumeData = {
     {
       category: "Data & ML",
       skills: [
+        "Claude Code / Skills",
+        "MCP",
+        "Multi-agent systems",
+        "LLM evaluation",
         "Apache Spark",
         "Akka",
         "AutoML",
@@ -305,6 +311,30 @@ export const resumeData: ResumeData = {
     // Blog articles
     {
       title:
+        "AI Paradigm Shift, Ep. 1 — The Skill That Monitored Its Own Evolution",
+      type: "blog",
+      venue: "Blog",
+      date: "2026 Mar",
+      url: "https://blog.schwannden.com/ai-paradigm-shift-ep-1-the-skill-that-monitored-its-own-evolution/",
+    },
+    {
+      title:
+        "AI Paradigm Shift, Ep. 2 — The Triage Agent That Learned From Every Incident",
+      type: "blog",
+      venue: "Blog",
+      date: "2026 Mar",
+      url: "https://blog.schwannden.com/ai-paradigm-shift-ep-2-the-triage-agent-that-learned-from-every-incident/",
+    },
+    {
+      title:
+        "AI Paradigm Shift, Ep. 3 — From Copy-Paste to Commit: How Skills Replaced My Prompt Library",
+      type: "blog",
+      venue: "Blog",
+      date: "2026 Mar",
+      url: "https://blog.schwannden.com/ai-paradigm-shift-ep-3-from-copy-paste-to-commit-how-skills-replaced-my-prompt-library/",
+    },
+    {
+      title:
         "Airflow with ArgoCD, kustomize, and Helm. Introducing CI/CD for Our Data Scientist Team",
       type: "blog",
       venue: "Blog",
@@ -372,6 +402,16 @@ export const resumeData: ResumeData = {
   ],
 
   talks: [
+    {
+      title: "AI Agentic Development & Harness Engineering",
+      venue: "MoBagel (private corporate training)",
+      date: "2026 May",
+      type: "workshop",
+      audience:
+        "MoBagel core developer team and agentic AI team (~15 engineers)",
+      description:
+        "Three-hour training across three parts. Part 1: paradigm shift to harness engineering — context engineering, skills as durable assets, the four eras of AI development. Part 2: bootstrapping the AI workflow — pre-commit/CI as agent sensory organs, skill authoring, plan-driven feature development. Part 3: provider-agnostic harness — portable artifacts (AGENTS.md, skills, MCP) across Claude, Codex, Cursor, and Gemini.",
+    },
     {
       title: "End‑to‑End AutoML in Practice (Decanter AI)",
       venue: "机器之心 (Jiqizhixin) × MoBagel",

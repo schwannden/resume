@@ -117,7 +117,6 @@ export default function RootLayout({
                 url: work.url,
                 ...(work.description && { description: work.description }),
                 ...(work.publisher && { publisher: work.publisher }),
-                ...(work.location && { location: work.location }),
               })),
             }),
           }}
