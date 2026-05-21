@@ -15,7 +15,7 @@ export function useFontSize() {
         saved &&
         (saved === "normal" || saved === "large" || saved === "extra-large")
       ) {
-        setFontSize(saved as FontSize)
+        setFontSize(saved)
         // Apply the saved font size class to document element
         document.documentElement.classList.remove(
           "font-size-normal",

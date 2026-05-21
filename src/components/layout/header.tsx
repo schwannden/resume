@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { MobileNav } from "./mobile-nav"
 import { AccessibilityConfig } from "@/components/ui/accessibility-config"
-import { Github } from "lucide-react"
+import { GithubIcon } from "@/components/ui/github-icon"
 import { siteConfig } from "../../../resume.config"
 
 const navigationLinks = [
@@ -59,7 +59,7 @@ export function Header() {
             aria-label="GitHub repository"
             className="text-foreground/60 hover:text-foreground transition-colors"
           >
-            <Github className="h-5 w-5" />
+            <GithubIcon className="h-5 w-5" />
           </a>
         </nav>
 
@@ -73,7 +73,7 @@ export function Header() {
             aria-label="GitHub repository"
             className="text-foreground/60 hover:text-foreground transition-colors"
           >
-            <Github className="h-5 w-5" />
+            <GithubIcon className="h-5 w-5" />
           </a>
           <MobileNav />
         </div>
