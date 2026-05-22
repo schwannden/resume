@@ -182,6 +182,11 @@ export const siteConfig = {
     // Job title for structured data
     jobTitle: "Tech Lead, Identity & Applied AI",
 
+    // ISO 8601 date the profile/resume site was first published.
+    // Used as `dateCreated` on the ProfilePage JSON-LD.
+    // Update this if you fork — leave it alone on the original.
+    profileDateCreated: "2024-09-01",
+
     // Areas of expertise
     expertise: [
       "Software Architecture",
