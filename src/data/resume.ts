@@ -104,9 +104,9 @@ export const resumeData: ResumeData = {
       company: "Ubiquiti",
       duration: "Aug 2025 - Present",
       responsibilities: [
-        "Built and shipped a portfolio of production AI agents for the SSO team — multi-agent release monitor, read-only incident-triage agent spanning CloudWatch, RDS Performance Insights, Athena, ALB/WAF, and CloudTrail, plus team-shared skills for code review, dependency review, and support triage. Triage agent cut median alert-to-root-cause from 70 → 18 minutes across 5 production incidents; by the fifth, a teammate ran incidents solo. Documented in a 3-part public blog series.",
-        "Drove a multi-quarter API latency epic to completion — identified SES suppression-list lookups as the root cause and shipped a Redis-cached fail-safe. P95 reduced 90–97% across 6 critical auth/MFA endpoints (e.g., login 11.27s → 0.79s; email MFA 10.18s → 0.31s; password reset 9.27s → 0.54s).",
-        "Owned cross-team architectural delivery on the SSO platform — drove Bring-Your-Own-IdP (SAML/OIDC for Entra, Okta, Google Workspace) from zero prior protocol experience, with the Entra one-click flow now live; brokered cross-team contracts across SRE, IdP Cloud, MSP Mgmt, Account FE, on-premise devices, and Mobile FE for multi-site tenant provisioning, JWT key rotation, and unified API error response standardization.",
+        "Built and shipped a suite of production AI tools for the SSO team, including a multi-agent release monitor and a read-only incident-triage agent that reduced alert-to-root-cause time by 70%. Additionally developed team-shared agents for feature development and code review to improve consistency in delivery quality and velocity.",
+        "Led a multi-quarter API latency initiative to completion by optimizing caching strategies, identifying performance bottlenecks, and refactoring deployment architecture. Achieved a 90–97% reduction in P95 latency across six critical auth/MFA endpoints (e.g., login: 11.27s → 0.79s; email MFA: 10.18s → 0.31s; password reset: 9.27s → 0.54s) while reducing compute capacity requirements by over 60%.",
+        'Owned cross-team architectural delivery for the SSO platform, leading the end-to-end implementation of "Bring Your Own IdP" (SAML/OIDC for Entra, Okta, and Google Workspace). Successfully managed the project from initial design through early access and full customer adoption, despite having no prior experience with these protocols.',
       ],
     },
     {
