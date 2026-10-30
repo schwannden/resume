@@ -5,6 +5,12 @@ updates:
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 20
+    # @eslint/js 10 needs eslint 10, and eslint-plugin-react / jsx-a11y still
+    # peer on eslint ^9. Re-enable this major once those plugins ship v10 support.
+    ignore:
+      - dependency-name: "@eslint/js"
+        update-types:
+          - "version-update:semver-major"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
