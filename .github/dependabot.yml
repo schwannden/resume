@@ -4,7 +4,15 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 20
+    open-pull-requests-limit: 10
+    # One PR per week for minor and patch traffic. Majors stay individual because
+    # they need a read of the changelog before they land.
+    groups:
+      npm-minor-and-patch:
+        applies-to: version-updates
+        update-types:
+          - "minor"
+          - "patch"
     # @eslint/js 10 needs eslint 10, and eslint-plugin-react / jsx-a11y still
     # peer on eslint ^9. Re-enable this major once those plugins ship v10 support.
     ignore:
@@ -16,3 +24,8 @@ updates:
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 5
+    groups:
+      github-actions-minor-and-patch:
+        update-types:
+          - "minor"
+          - "patch"
