@@ -25,7 +25,7 @@ export const siteConfig = {
 
   // Bio for SEO and social sharing
   description:
-    "Tech lead at the intersection of identity platforms and applied AI. Builds production agentic systems at Ubiquiti; previously Director of ML at MoBagel. Author of technical publications and open source contributions.",
+    "Tech lead at the intersection of identity platforms and applied AI. Builds production AI systems for contact centers at Cresta; previously led SSO at Ubiquiti and was Director of ML at MoBagel. Author of technical publications and open source contributions.",
 
   // Short bio (used in some social cards)
   shortDescription: "Tech lead — identity platforms and applied AI",
