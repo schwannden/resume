@@ -96,13 +96,21 @@ export const resumeData: ResumeData = {
   linkedin: "https://www.linkedin.com/in/schwannden/",
   title: "Tech Lead, Identity & Applied AI",
   summary:
-    "Tech lead with a decade across data products, identity platforms, and applied AI. Currently leading SSO subsystem at Ubiquiti serving millions of active users under high-throughput production load, and built the team's portfolio of production AI agents — multi-agent triage, release monitoring, code review — that learn from each use. Previously Director of ML at MoBagel, where I won the enterprise accounts (Chunghwa Telecom, Wistron, AUO) that anchored Series A revenue and re-architected the AutoML engine for ~30× runtime efficiency. Author, speaker, open-source contributor.",
+    "Tech lead with a decade across data products, identity platforms, and applied AI. Now at Cresta, building production AI systems for contact centers. Previously led the SSO subsystem at Ubiquiti serving millions of active users under high-throughput production load, and built the team's portfolio of production AI agents — multi-agent triage, release monitoring, code review — that learn from each use. Before that, Director of ML at MoBagel, where I won the enterprise accounts (Chunghwa Telecom, Wistron, AUO) that anchored Series A revenue and re-architected the AutoML engine for ~30× runtime efficiency. Author, speaker, open-source contributor.",
 
   experience: [
     {
+      title: "Senior Software Engineer",
+      company: "Cresta",
+      duration: "Jul 2026 - Present",
+      responsibilities: [
+        "Building production AI systems for contact centers, spanning real-time conversation intelligence, retrieval-augmented generation, and knowledge workflows that deliver timely guidance, insights, and automation to customer-facing teams.",
+      ],
+    },
+    {
       title: "SSO Team Lead",
       company: "Ubiquiti",
-      duration: "Aug 2025 - Present",
+      duration: "Aug 2025 - Jun 2026",
       responsibilities: [
         "Built and shipped a suite of production AI tools for the SSO team, including a multi-agent release monitor and a read-only incident-triage agent that reduced alert-to-root-cause time by 70%. Additionally developed team-shared agents for feature development and code review to improve consistency in delivery quality and velocity.",
         "Led a multi-quarter API latency initiative to completion by optimizing caching strategies, identifying performance bottlenecks, and refactoring deployment architecture. Achieved a 90–97% reduction in P95 latency across six critical auth/MFA endpoints (e.g., login: 11.27s → 0.79s; email MFA: 10.18s → 0.31s; password reset: 9.27s → 0.54s) while reducing compute capacity requirements by over 60%.",
